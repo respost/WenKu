@@ -1,0 +1,51 @@
+<div class="ucleft">
+<div class="avatar">
+<p><b>{$hisuid|getusername}</b></p>
+<p>{$hisuid|getrolename}</p>
+<div class="vip"></div>
+<div><img src="{:avatar($hisuid,'120')}" /></div>
+
+<if condition="$isadmin eq 0">
+<p>积分:<s style="color:orange"><b>{$hisuid|getuserscore}</b></s><em>/</em>{$hisuid|getusersjscore}</p>
+<div class="user-exp">
+<span style="width:{$hisuid|getusersjper}%"></span>
+
+</div>
+
+<else />
+<p>积分:<s style="color:orange"><b>{$hisuid|getuserscore}</b></s></p>
+</if>
+<div style="margin-bottom:10px;"></div>
+<if condition="$memberfocusid eq 3">
+<div class="gzic" data-uri="{:U('ucenter/delgz')}" onClick="quxiaogz({$hisuid},this)">
+<span  class="gz-icon xhgz-icon"></span>相互关注
+</div>
+<elseif condition="$memberfocusid eq 1" />
+<div class="gzic" data-uri="{:U('ucenter/delgz')}" onClick="quxiaogz({$hisuid},this)">
+<span  class="gz-icon ygz-icon"></span>已关注
+</div>
+<elseif condition="$memberfocusid eq 5" />
+<div class="gzic" style="text-align:center;">你自己</div>
+<else />
+<div class="gzic" data-uri="{:U('ucenter/addgz')}" onClick="guanzhu({$hisuid},this)">
+<span  class="gz-icon jgz-icon"></span>加关注
+</div></if>
+
+
+
+<div class="grayinfo" style="margin-top:10px;">{$hisuid|getuserintro|msubstr=###,0,50}</div>
+
+</div>
+<div class="uc-menu">
+<ul>
+<li <if condition="$actionname eq 'mydoclist'"> class="cur"</if>><a href="{:U('member/mydoclist',array('uid'=>$hisuid))}"><b class="ucmenuicon gxicon"></b>文档贡献</a></li>
+<li <if condition="$actionname eq 'xhdoclist'"> class="cur"</if>><a href="{:U('member/xhdoclist',array('uid'=>$hisuid))}"><b class="ucmenuicon scicon"></b>文档收藏</a></li>
+<li <if condition="$actionname eq 'fensi'"> class="cur"</if>><a href="{:U('member/fensi',array('uid'=>$hisuid))}"><b class="ucmenuicon gzicon"></b>粉丝·关注</a></li>
+
+
+</ul>
+
+
+</div>
+
+</div>

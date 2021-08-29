@@ -1,0 +1,20 @@
+[ 2020-06-19T17:34:43+08:00 ] 127.0.0.1 /install.php
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000808s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000874s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.000928s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000976s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.014169s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014225s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000829s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000818s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000622s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000712s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003120s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000807s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000844s ]
+

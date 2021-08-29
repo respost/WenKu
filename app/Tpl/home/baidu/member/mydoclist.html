@@ -1,0 +1,73 @@
+<include file="public:head" />
+<include file="member:memleft" />
+
+<div class="ucright">
+<div class="menuname">
+<ul><li class="cur"><a href="#">他的文档</a></li>
+
+</ul>
+
+
+<b><s></s></b>
+
+</div>
+<div class="submenu">
+<ul>
+
+</ul>
+
+
+<div class="fr">
+<mtceo:doctotalnum type="lists" uid="$hisuid" own="1" order="add_time desc">
+<s>文档：</s><i>{$data.doc}份</i><em>|</em>
+<s>下载：</s><i>{$data.down}次</i><em>|</em>
+<s>评分：</s><i>{$data.raty}人</i><em>|</em>
+<s>积分：</s><i>{$data.score}</i>
+</mtceo:doctotalnum>
+</div>
+
+</div>
+
+<div class="clear"></div>
+
+<table width="100%" border="0" id="ucform">
+  <tr>
+    <th width="241">文档名称</th>
+    <th width="170">用户评分</th>
+    <th width="82">浏览数</th>
+    <th width="82">下载量</th>
+    <th width="82">积分</th>
+    <th width="92" style="border-right:1px solid #e5e5e5;">发布时间</th>
+  </tr>
+  <mtceo:doc type="lists" uid="$hisuid" own="1"  order="add_time desc" pagenum="10">
+  <volist name="data['list']" id="vo">
+  <tr>
+    <td><div class="icon {$vo.ext}"></div><a href="{:U('doc/doccon',array('id'=>$vo['id']))}">{$vo.title|msubstr=###,0,12}</a></td>
+    <td><span class="ratyimg raty{$vo.raty|getratyint}">{$vo.raty}分</span>{$vo.ratynum}人评分</td>
+    <td>{$vo.hits}</td>
+    <td>{$vo.downnum}</td>
+    <td>{$vo.score}</td>
+    <td>{$vo.add_time|fdate}</td>
+  </tr>
+  </volist>
+  
+</table>
+
+
+
+
+<div class="page-nav page-center"> 
+<div class="page-inner"> 
+<div class="page-content">
+{$data['page']}
+
+
+</div> </div></div>
+</mtceo:doc>
+</div>
+
+<div class="clear">
+
+</div>
+
+<include file="public:footer" />

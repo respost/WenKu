@@ -1,0 +1,84 @@
+<include file="public:header" />
+<div class="common-form pad_lr_10">
+	<table id="checktable" width="100%" cellpadding="2" cellspacing="1" class="table_form">
+
+            <tr>
+            	<th><input type="hidden" id="ver" name="ver" value="{:C('mtceo_verinfo')}" />
+            	</th>
+                <td><input type="button" data-uri="http://www.mtceo.net/index.php?m=common&a=checkmtceover" id="checkver" class="btn btn_submit" value="检测最新版本"/></td>
+                <td id="newver"></td>
+            </tr>
+		</table>
+	
+	
+	<div id="downloadver" style="display:none;">
+	
+	<form action="{:U('update/index')}" method="post">
+		<table width="100%" cellpadding="2" cellspacing="1" class="table_form">
+<input type="hidden" name="verinfodata" id="verinfodata" value="" />
+            <tr>
+            	<th><input type="hidden" name="accept" value="1" /></th>
+                <td><input type="submit" id="J_clear_cache" class="btn btn_submit" value="下载升级文件"/></td>
+                <td id="verinfo" style="color:red;"></td>
+            </tr>
+		</table>
+	</form>
+	
+	</div>
+</div>
+</div>
+
+
+
+
+
+
+<include file="public:footer" />
+<script>
+$(function(){
+
+
+$('#checkver').click(function(){
+
+var url=$(this).attr('data-uri');
+var ver=$('#ver').val();
+
+$.getJSON(url+"&callback=?",{ver:ver},function(data){
+
+if(data.status==1){
+
+
+$('#checktable').hide();
+$('#verinfo').text('最新版本为'+data.info+',您可以选择升级！！！');
+
+$('#verinfodata').val(data.info);
+
+$('#downloadver').show();
+	
+}else{
+
+$('#newver').text('目前您的版本为最新版本');
+}
+
+
+
+	
+});
+
+
+
+	
+});
+
+
+
+
+	
+});
+
+
+
+
+</script>
+</body>
+</html>

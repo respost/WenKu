@@ -1,0 +1,45 @@
+<include file="public:head" />
+<div class="cleft">
+<div class="listmenu">
+<a href="#">我的文档</a>
+<a href="#" class="cur">我评论过的文档</a>
+<a href="#">我下载过的文档</a>
+
+</div>
+
+
+<div class="doclist">
+<ul>
+<volist name="doclist['list']" id="vo">
+<li>
+<a href="{:U('doc/doccon',array('id'=>$vo['id']))}">
+<img src="{:docimg($vo['model'],$vo['id'])}"   width="67" height="97" />
+</a>
+<div class="doc-r"><p><a href="{:U('doc/doccon',array('id'=>$vo['id']))}">{$vo.title|msubstr=###,0,20}</a></p>
+<p>发布人:{$vo.uid|getusername}<i>|</i>发布时间:{$vo.add_time|fdate}</p>
+<p>{$vo.comcount}人评论<i>|</i>所需积分:{$vo.score}</p>
+<p>{$vo.intro|msubstr=###,0,100} </p>
+<p><span class="ratyimg raty{$vo.raty|getratyint}">{$vo.raty}分</span></p>
+
+</div>
+</li>
+</volist>
+</ul>
+</div>
+
+<div class="page">
+{$doclist['page']}
+</div>
+
+
+
+</div>
+<div class="cright">
+
+<include file="ucenter:u-common" />
+
+<include file="public:r-common" />
+
+</div>
+
+<include file="public:footer" />

@@ -1,0 +1,65 @@
+<include file="public:head" />
+<include file="member:memleft" />
+
+<div class="ucright">
+<div class="menuname">
+<ul><li class="cur"><a href="#">他/她的收藏</a></li>
+
+</ul>
+
+
+<b><s></s></b>
+
+</div>
+<div class="submenu">
+<ul>
+</ul>
+
+
+<div class="fr">
+<mtceo:doctotalnum type="lists" uid="$hisuid" usertype="wysc" order="add_time desc">
+<s>文档：</s><i>{$data.doc}份</i><em>|</em>
+<s>评分：</s><i>{$data.raty}人</i><em>|</em>
+<s>积分：</s><i>{$data.score}</i>
+</mtceo:doctotalnum>
+</div>
+
+</div>
+
+<div class="clear"></div>
+
+<table width="100%" border="0" id="ucform">
+  <tr>
+    <th width="241">文档名称</th>
+    <th width="90">上传者</th>
+    <th width="120" style="border-right:1px solid #e5e5e5;">发布时间</th>
+    
+  </tr>
+   <mtceo:doc type="lists" uid="$hisuid" usertype="wysc" order="add_time desc" pagenum="10">
+  <volist name="data['list']" id="vo">
+  <tr>
+    <td><div class="icon {$vo.ext}"></div><a href="{:U('doc/doccon',array('id'=>$vo['id']))}">{$vo.title|msubstr=###,0,18}</a></td>
+    <td><a href="{:U('member/mydoclist',array('uid'=>$vo['uid']))}">{$vo.uid|getusername}</a></td>
+    <td>{$vo.add_time|fdate}</td>
+    
+  </tr>
+  </volist>
+  
+</table>
+
+
+
+
+<div class="page-nav page-center"> 
+<div class="page-inner"> 
+<div class="page-content">
+{$data['page']}
+</div> </div></div>
+</mtceo:doc>
+</div>
+
+<div class="clear">
+
+</div>
+
+<include file="public:footer" />

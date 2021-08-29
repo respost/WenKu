@@ -1,0 +1,150 @@
+<include file="public:head" />
+<div class="clear menu"><a href="{:U('index/index')}">文库首页</a><em class="bgcur"></em><if condition="$id gt 0">{:getnavlist($id)}<else />{$navname}</if></div>
+
+
+<div class="cleft">
+
+<if condition="$id gt 0">
+
+<div class="catelist">
+
+
+<if condition="$pid eq 0">
+<h3 style="margin:5px 13px;">{$id|getcatename='doc',###}</h3>
+<ul>
+<volist name="tcate" id="vo">
+<li><a href="{:U('doc/doclist',array('id'=>$vo['id']))}">{$vo.id|getcatename='doc',###}</a></li>
+
+</volist>
+
+
+</ul>
+<else />
+<h3 style="margin:5px 13px;">{$tcateid|getcatename='doc',###}</h3>
+<ul>
+<volist name="thcate" id="vo">
+<li><if condition="$vo['id'] eq $id">{$vo.id|getcatename='doc',###}<else /><a href="{:U('doc/doclist',array('id'=>$vo['id']))}">{$vo.id|getcatename='doc',###}</a></if></li>
+
+</volist>
+
+
+</ul>
+
+
+</if>
+
+
+
+
+
+
+</div>
+</if>
+
+<div class="tabtitle">
+<ul>
+
+<li class="cur"><a href="#">文档</a></li>
+</ul>
+</div>
+
+<div class="divform">
+<table width="100%" class="listform" cellspacing="0" cellpadding="0" border="0">
+  <tr>
+    <th width="32">格式</th>
+    <th width="394">文档名称</th>
+    <th  width="100">上传者</th>
+    <th width="70">下载数</th>
+    <th width="70">上传时间</th>
+  </tr>
+  
+  <mtceo:doc type="lists" cateid="$catearr" order="$order" pagenum="20" >
+  <volist name="data['list']" id="vo" offset="0" length="6">
+
+  <tr <php>if(getmodint($i)==0){</php> style="background:#F4F9FC"<php>}</php>>
+   <td><div class="icon {$vo.ext}"></div></td>
+    <td><a href="{:U('doc/doccon',array('id'=>$vo['id']))}">{$vo.title|msubstr=###,0,25}</a></td>
+    <td><a href="{:U('member/mydoclist',array('uid'=>$vo['uid']))}">{$vo.uid|getusername}</a></td>
+    <td>{$vo.downnum}次</td>
+    <td>{$vo.add_time|fdate}</td>
+  </tr>
+   </volist>
+  
+</table>
+
+
+
+
+
+
+</div>
+<div class="page-nav page-center"> 
+<div class="page-inner"> 
+<div class="page-content">
+{$data['page']}
+</div> </div></div> </mtceo:doc>
+</div>
+<div class="cright">
+<div class="midupload">
+<div class="innerupload">
+<a href="{:U('doc/doc_share')}" class="cateicons midupbtn"></a>
+</div>
+</div>
+
+<div class="midupload">
+<div class="innerright">
+<div class="docinfotitle" style="margin:0px;border:0;margin-bottom:10px;">编辑推荐</div>
+
+<div class="bjtj">
+<ul>
+<mtceo:doc type="lists" status="4"  order="add_time desc" >
+<volist name="data['list']" id="vo" offset="0" length="2">
+<li>
+<a href="{:U('doc/doccon',array('id'=>$vo['id']))}">
+<img src="{:docimg($vo['model'],$vo['id'])}" width="67" height="97" />
+</a>
+<p><a href="{:U('doc/doccon',array('id'=>$vo['id']))}">{$vo.title|msubstr=###,0,10}</a></p>
+
+</li>
+</volist>
+</mtceo:doc>
+
+</ul>
+
+
+
+
+
+
+</div>
+
+
+
+</div>
+</div>
+<div class="midupload">
+<div class="innerright">
+<div class="docinfotitle" style="margin:0px">热门文档</div>
+
+<div class="docinfo">
+<ul>
+<mtceo:doc type="lists" order="hits desc" >
+<volist name="data['list']" id="vo" offset="0" length="6">
+<li><a href="{:U('doc/doccon',array('id'=>$vo['id']))}">{$vo.title|msubstr=###,0,12}</a></li>
+</volist>
+</mtceo:doc>
+</ul>
+
+
+
+</div>
+
+
+
+</div>
+</div>
+</div>
+<div class="clear">
+
+</div>
+<include file="public:footer" />

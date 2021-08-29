@@ -1,0 +1,35 @@
+<div class="ucleft">
+<div class="avatar">
+<p><b>{$uid|getusername}</b></p>
+<p>{$uid|getrolename}</p>
+<div class="vip"></div>
+<div><img src="{:avatar($uid,'120')}" /></div>
+
+<if condition="$isadmin eq 0">
+<p>积分:<s style="color:orange"><b>{$uid|getuserscore}</b></s><em>/</em>{$uid|getusersjscore}</p>
+<div class="user-exp">
+<span style="width:{$uid|getusersjper}%"></span>
+
+</div>
+
+<else />
+<p>积分:<s style="color:orange"><b>{$uid|getuserscore}</b></s></p>
+</if>
+</div>
+<div class="uc-menu">
+<ul>
+<li <if condition="$actionname eq 'index'"> class="cur"</if>><a href="{:U('ucenter/index')}"><b class="ucmenuicon ucicon"></b>个人中心</a></li>
+<li <if condition="$actionname eq 'mydoclist'"> class="cur"</if>><a href="{:U('ucenter/mydoclist')}"><b class="ucmenuicon gxicon"></b>我的贡献</a></li>
+<li <if condition="$actionname eq 'xhdoclist'"> class="cur"</if>><a href="{:U('ucenter/xhdoclist')}"><b class="ucmenuicon scicon"></b>我的收藏</a></li>
+<li <if condition="$actionname eq 'downdoclist'"> class="cur"</if>><a href="{:U('ucenter/downdoclist')}"><b class="ucmenuicon downicon"></b>我的下载</a></li>
+<li <if condition="$actionname eq 'usermail'"> class="cur"</if>><a href="{:U('ucenter/usermail')}"><b class="ucmenuicon mailicon"></b>我的消息</a></li>
+<li <if condition="$actionname eq 'tongji'"> class="cur"</if>><a href="{:U('ucenter/tongji')}"><b class="ucmenuicon scoreicon"></b>积分明细</a></li>
+<li <if condition="$actionname eq 'fensi'"> class="cur"</if>><a href="{:U('ucenter/fensi')}"><b class="ucmenuicon gzicon"></b>粉丝·关注</a></li>
+
+
+</ul>
+
+
+</div>
+
+</div>

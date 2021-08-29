@@ -1,0 +1,57 @@
+<include file="public:header" />
+<div class="subnav">
+    <div class="content_menu ib_a blue line_x">
+        <a href="{:U('article_page/index',array('menuid'=>$menuid))}"><em><< {:L('page_manage')}</em></a>
+       
+    </div>
+</div>
+<!--单网页内容编辑-->
+<form id="info_form" action="{:u('article_page/edit')}" method="post" enctype="multipart/form-data">
+<div class="pad_lr_10">
+	<div class="col_tab">
+		<ul class="J_tabs tab_but cu_li">
+			<li class="current">{:L('article_basic')}</li>
+			
+		</ul>
+		<div class="J_panes">
+			<div class="content_list pad_10">
+				<table width="100%" cellspacing="0" class="table_form">
+			        <tr>
+						<th width="100">{:L('article_title')} :</th>
+					 	<td><input type="text" name="title" style="color:{$info.color}"  id="J_title" class="input-text" size="60" value="{$info.title}">
+					 	<input type="hidden" value="" name="color" id="J_color">
+					        <a href="javascript:;" class="color_picker_btn"><img class="J_color_picker" data-it="J_title" data-ic="J_color" src="__PUBLIC__/images/color.png"></a></td>
+					</tr>
+					<tr>
+						<th>{:L('article_info')} :</th>
+						<td><textarea name="info" id="J_info" style="width:80%;height:380px;visibility:hidden;resize:none;">{$info.info}</textarea></td>
+					</tr>
+				</table>
+			</div>
+
+		</div>
+	</div>
+	<div class="mt10"><input type="submit" value="{:L('submit')}" name="dosubmit" class="btn btn_submit" style="margin:0 0 10px 10px;"></div>
+</div>
+<input type="hidden" value="{$info.id}" name="id">
+<input type="hidden" value="{$menuid}" name="menuid">
+</form>
+<include file="public:footer" />
+<script src="__PUBLIC__/js/colorpicker.js"></script>
+<script src="__PUBLIC__/js/kindeditor/kindeditor-min.js"></script>
+<script>
+$(function() {
+	KindEditor.create('#J_info', {
+		uploadJson : '{:U("attachment/editer_upload")}',
+		fileManagerJson : '{:U("attachment/editer_manager")}',
+		allowFileManager : true
+	});
+	//颜色选择器
+	$('.J_color_picker').colorpicker();
+
+	
+	$('ul.J_tabs').tabs('div.J_panes > div');
+});
+</script>
+</body>
+</html>

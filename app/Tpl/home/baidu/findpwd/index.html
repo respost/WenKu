@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>找回密码-{:C('mtceo_site_title')}</title>
+<meta content="{:C('mtceo_site_description')}" name="description">
+<meta content="{:C('mtceo_site_keyword')}" name="keywords">
+
+<link href="__PUBLIC__/theme/baidu/css/base.css" rel="stylesheet" media="screen" />
+<link href="__PUBLIC__/theme/baidu/css/mtceodialogtip.css" rel="stylesheet" media="screen" />
+<script src="__PUBLIC__/js/jquery-1.8.3.js"></script>
+<script src="__PUBLIC__/js/mtceo.js"></script>
+<script src="__PUBLIC__/js/home_extend.js"></script>
+</head>
+<body style="background:#eee;">
+<div class="login">
+	<div class="ltop"></div>
+    <div class="fixed">
+    	<div class="lft fl">
+        	<div class="logo">
+        		<a href="{:C('mtceo_site_url')}">
+				
+				</a>
+    		</div>
+            <div id="sels">
+            	<ul>
+            		
+<li><a href="{:U('user/login')}">用户登录</a></li>
+<li><a href="{:U('user/register')}">没有帐号？！免费注册</a></li>
+<li><a href="#" class="cur">忘记密码</a></li>
+
+               </ul>
+            </div>
+        </div>
+        <!--left-->
+        <div class="rgt fl">
+        	<div class="parts" sel="true">
+
+<form id="id_form" method="post" action="{:U('findpwd/index')}">
+	
+	
+	
+    <p>用户名：<input type="text" class="ins" name="username" id="username" />
+    
+    </p>
+	<p>验证码：<input type="text" class="ins" name="captcha" id="captcha" />
+	<img style="margin-left:5px;" title="点击刷新验证码"	class="verify_img" url="{:U('common/code','time=')}" onclick="javascript:newgdcode(this);"	src="{:U('common/code')}" /></p>
+    
+	
+	
+	
+	
+    <p class="pbtns">
+    	<input id="id_login_btn" type="submit" class="btns" value="找回密码" tabindex="3"/>&nbsp;
+    	
+    </p>
+   
+
+</form>
+
+            </div>
+            <!--parts-->
+        </div>
+        <!--right-->
+    </div>
+    
+    <div class="lbot">&copy; mtceo.net Corporation.</div>
+    
+</div>
+
+
+
+
+</body>
+</html>

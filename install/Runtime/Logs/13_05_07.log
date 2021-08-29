@@ -1,0 +1,148 @@
+[ 2013-05-07T11:44:03+08:00 ] 24.169.201.84 /mtceo/install.php
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.002336s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002455s ]
+NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at D:\PHPweb\mtceo\install.php:1) D:\PHPweb\mtceo\mtceo\Common\functions.php 第 552 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001571s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001668s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.080761s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.080868s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001180s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000990s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000914s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.001028s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004317s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHPweb\mtceo\install.php:1) D:\PHPweb\mtceo\mtceo\Lib\Core\View.class.php 第 88 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHPweb\mtceo\install.php:1) D:\PHPweb\mtceo\mtceo\Lib\Core\View.class.php 第 89 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHPweb\mtceo\install.php:1) D:\PHPweb\mtceo\mtceo\Lib\Core\View.class.php 第 90 行.
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001145s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001226s ]
+
+[ 2013-05-07T11:49:21+08:00 ] 24.169.201.84 /mtceo/install.php
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001010s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001103s ]
+NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at D:\PHPweb\mtceo\install.php:1) D:\PHPweb\mtceo\mtceo\Common\functions.php 第 552 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001522s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001603s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.017034s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017165s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001127s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000984s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000923s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.001037s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004276s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHPweb\mtceo\install.php:1) D:\PHPweb\mtceo\mtceo\Lib\Core\View.class.php 第 88 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHPweb\mtceo\install.php:1) D:\PHPweb\mtceo\mtceo\Lib\Core\View.class.php 第 89 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHPweb\mtceo\install.php:1) D:\PHPweb\mtceo\mtceo\Lib\Core\View.class.php 第 90 行.
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000983s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001057s ]
+
+[ 2013-05-07T11:50:00+08:00 ] 24.169.201.84 /mtceo/install.php
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001023s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001120s ]
+NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cookie - headers already sent by (output started at D:\PHPweb\mtceo\install.php:1) D:\PHPweb\mtceo\mtceo\Common\functions.php 第 552 行.
+NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at D:\PHPweb\mtceo\install.php:1) D:\PHPweb\mtceo\mtceo\Common\functions.php 第 552 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001546s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001629s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.035595s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035701s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001117s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000980s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000923s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.001030s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004252s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHPweb\mtceo\install.php:1) D:\PHPweb\mtceo\mtceo\Lib\Core\View.class.php 第 88 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHPweb\mtceo\install.php:1) D:\PHPweb\mtceo\mtceo\Lib\Core\View.class.php 第 89 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHPweb\mtceo\install.php:1) D:\PHPweb\mtceo\mtceo\Lib\Core\View.class.php 第 90 行.
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000982s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001054s ]
+
+[ 2013-05-07T11:51:46+08:00 ] 24.169.201.84 /mtceo/install.php
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001013s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001107s ]
+NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at D:\PHPweb\mtceo\install.php:1) D:\PHPweb\mtceo\mtceo\Common\functions.php 第 552 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001367s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001455s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.016677s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016784s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001118s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000979s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000914s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000851s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004063s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHPweb\mtceo\install.php:1) D:\PHPweb\mtceo\mtceo\Lib\Core\View.class.php 第 88 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHPweb\mtceo\install.php:1) D:\PHPweb\mtceo\mtceo\Lib\Core\View.class.php 第 89 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHPweb\mtceo\install.php:1) D:\PHPweb\mtceo\mtceo\Lib\Core\View.class.php 第 90 行.
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000980s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001052s ]
+
+[ 2013-05-07T11:57:23+08:00 ] 24.169.201.84 /mtceo/install.php
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001016s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001105s ]
+NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at D:\PHPweb\mtceo\install.php:1) D:\PHPweb\mtceo\mtceo\Common\functions.php 第 552 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001545s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001626s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.034604s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034710s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001117s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000983s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000919s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.001036s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004259s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHPweb\mtceo\install.php:1) D:\PHPweb\mtceo\mtceo\Lib\Core\View.class.php 第 88 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHPweb\mtceo\install.php:1) D:\PHPweb\mtceo\mtceo\Lib\Core\View.class.php 第 89 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHPweb\mtceo\install.php:1) D:\PHPweb\mtceo\mtceo\Lib\Core\View.class.php 第 90 行.
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000987s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001061s ]
+
+[ 2013-05-07T11:57:38+08:00 ] 24.169.201.84 /mtceo/install.php?m=index&a=check
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001055s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001149s ]
+NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at D:\PHPweb\mtceo\install.php:1) D:\PHPweb\mtceo\mtceo\Common\functions.php 第 552 行.
+NOTIC: [2] Missing argument 1 for Dir::__construct(), called in D:\PHPweb\mtceo\install\Lib\Action\indexAction.class.php on line 70 and defined D:\PHPweb\mtceo\install\Lib\ORG\Dir.class.php 第 37 行.
+NOTIC: [8] Undefined variable: path D:\PHPweb\mtceo\install\Lib\ORG\Dir.class.php 第 39 行.
+NOTIC: [8] Undefined variable: path D:\PHPweb\mtceo\install\Lib\ORG\Dir.class.php 第 39 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001597s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001701s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.088117s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.088229s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001185s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.001072s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000923s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000862s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004275s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHPweb\mtceo\install.php:1) D:\PHPweb\mtceo\mtceo\Lib\Core\View.class.php 第 88 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHPweb\mtceo\install.php:1) D:\PHPweb\mtceo\mtceo\Lib\Core\View.class.php 第 89 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHPweb\mtceo\install.php:1) D:\PHPweb\mtceo\mtceo\Lib\Core\View.class.php 第 90 行.
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001043s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001119s ]
+

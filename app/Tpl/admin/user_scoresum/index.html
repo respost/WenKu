@@ -1,0 +1,73 @@
+<include file="public:header" />
+<!--会员列表-->
+<div class="pad_10" >
+<form name="searchform" method="get" >
+    <table width="100%" cellspacing="0" class="search_form">
+        <tbody>
+            <tr>
+                <td>
+                <div class="explain_col">
+                    <input type="hidden" name="g" value="admin" />
+                    <input type="hidden" name="m" value="user_scoresum" />
+                    <input type="hidden" name="a" value="index" />
+                    <input type="hidden" name="menuid" value="{$menuid}" />
+                    &nbsp;会员名 :
+                    <input name="keyword" type="text" class="input-text" size="25" value="{$search.keyword}" />
+                    <input type="submit" name="search" class="btn" value="搜索" />
+                </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </form>
+
+    <div class="J_tablelist table_list" data-acturi="{:U('user_scoresum/ajax_edit')}">
+    <table width="100%" cellspacing="0">
+        <thead>
+            <tr>
+               
+                <th width="40"><span data-tdtype="order_by" data-field="uid">ID</span></th>
+               
+                <th width="120"><span data-tdtype="order_by" data-field="username">用户名</span></th>
+                <th width="60"><span data-tdtype="order_by" data-field="score">总积分</span></th>
+                <th width="60"><span data-tdtype="order_by" data-field="doc">文档所得</span></th>
+                <th width="60"><span data-tdtype="order_by" data-field="down">下载花费</span></th>
+                <th width="60"><span data-tdtype="order_by" data-field="register">注册积分</span></th>
+                <th width="60"><span data-tdtype="order_by" data-field="login">登录积分</span></th>
+               
+                <th width="60"><span data-tdtype="order_by" data-field="pay">充值积分</span></th>
+            </tr>
+        </thead>
+      
+    	<tbody>
+            <volist name="list" id="val" >
+            <tr>
+               
+                <td align="center">{$val.uid}</td>
+                <td align="center">{$val.username}</td>
+                <td align="center"><span data-tdtype="edit" data-field="score" data-id="{$val.uid}" class="tdedit">{$val.score}</span></td>
+                <td align="center"><span data-tdtype="edit" data-field="doc" data-id="{$val.uid}" class="tdedit">{$val.doc}</span></td>
+                <td align="center"><span data-tdtype="edit" data-field="down" data-id="{$val.uid}" class="tdedit">{$val.down}</span></td>
+                
+                <td align="center"><span data-tdtype="edit" data-field="register" data-id="{$val.uid}" class="tdedit">{$val.register}</span></td>
+                <td align="center"><span data-tdtype="edit" data-field="login" data-id="{$val.uid}" class="tdedit">{$val.login}</span></td>
+               
+                <td align="center"><span data-tdtype="edit" data-field="pay" data-id="{$val.uid}" class="tdedit">{$val.pay}</span></td>
+     </tr>
+            </volist>
+    	</tbody>
+    </table>
+    <div class="btn_wrap_fixed">
+        
+        
+        <div id="pages">{$page}</div>
+    </div>
+
+    </div>
+</div>
+
+<include file="public:footer" />
+
+</body>
+</html>
+

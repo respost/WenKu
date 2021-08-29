@@ -1,0 +1,349 @@
+<include file="public:head" />
+<div class="cleft">
+	<div class="catelist1">
+		<div class="catetitle">文档分类</div>
+		<ul>
+			<volist name="cate" id="vo" offset="0" length="8">
+				<li>
+					<P class="boldp">
+						<a href="{:U('doc/doclist',array('id'=>$vo['id']))}">{$vo.name}</a>
+					</P>
+					<P class="litcate">
+						<volist name="vo['tcate']" id="vo1" offset="0" length="2">
+							<a href="{:U('doc/doclist',array('id'=>$vo1['id']))}">{$vo1.name}</a>
+						</volist>
+					</P>
+					<if condition="$vo['tcate'] neq null">
+						<div class="cateview disnone">
+							<volist name="vo['tcate']" id="vo1">
+								<div class="tcate">
+									<a href="{:U('doc/doclist',array('id'=>$vo1['id']))}">{$vo1.name}</a>
+								</div>
+
+								<volist name="vo1['scate']" id="vo2">
+									<a href="{:U('doc/doclist',array('id'=>$vo2['id']))}">{$vo2.name}</a>
+								</volist>
+
+							</volist>
+						</div>
+						<div class="pos bgcur"></div>
+					</if>
+				</li>
+			</volist>
+		</ul>
+	</div>
+	<div class="l-mid">
+		<div class="focus">
+			<div id="focus_img">
+				<div class="nbox">
+					<volist name="ad_list" id="vo" offset="0" length="4">
+						<div class="focus_box">
+							<a href="{$vo.url}" target="_blank">
+								<img src="/data/upload/advert/{$vo.content}" alt="{$vo.name}" />
+							</a>
+						</div>
+					</volist>
+				</div>
+			</div>
+			<div id="focus_links">
+				<ul>
+					<li>
+						<a href="javascript:void(0)" target="_self" class="cur"></a>
+					</li>
+					<li>
+						<a href="javascript:void(0)" target="_self"></a>
+					</li>
+					<li>
+						<a href="javascript:void(0)" target="_self"></a>
+					</li>
+					<li>
+						<a href="javascript:void(0)" target="_self"></a>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+
+		<div class="jpwd">
+			<div class="jptitle"><b>精品文档</b>
+				<div class="fr">
+					<a href="{:U('doc/doclist',array('c'=>'wytj'))}">更多</a>
+				</div>
+			</div>
+			<div class="dochlist">
+
+				<mtceo:doc type="lists" how="rate">
+					<volist name="data['list']" id="vo" offset="0" length="4">
+						<dl>
+							<dt>
+<a href="{:U('doc/doccon',array('id'=>$vo['id']))}"><img src="{:docimg($vo['model'],$vo['id'])}" /></a>
+<span class="icon {$vo.ext}"></span>
+
+</dt>
+							<dd>
+								<a href="{:U('doc/doccon',array('id'=>$vo['id']))}">{$vo.title|msubstr=###,0,14}</a>
+							</dd>
+							<dd class="gray">{$vo.hits}人阅读</dd>
+
+						</dl>
+					</volist>
+				</mtceo:doc>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="clear ad74688"></div>
+
+	<div class="catedoclist">
+		<div class="c-d-title">
+			<h3 style="width:200px;float:left;">最新上传</h3>
+			<div class="fr">
+				<a href="{:U('doc/doclist',array('c'=>'newdoc'))}">更多</a>
+			</div>
+		</div>
+		<div class="dochlist" style="margin:0px 10px">
+			<mtceo:doc type="lists" order="add_time desc">
+				<volist name="data['list']" id="vo" offset="0" length="10">
+					<dl>
+						<dt>
+							<a href="{:U('doc/doccon',array('id'=>$vo['id']))}"><img src="{:docimg($vo['model'],$vo['id'])}" /></a>
+							<span class="icon {$vo.ext}"></span>
+						</dt>
+						<dd>
+							<a href="{:U('doc/doccon',array('id'=>$vo['id']))}">{$vo.title|msubstr=###,0,14}</a>
+						</dd>
+						<dd class="gray">{$vo.add_time|fdate}上传</dd>
+					</dl>
+				</volist>
+		</div>
+		</mtceo:doc>
+
+	</div>
+	<div class="catedoclist">
+		<div class="c-d-title">
+			<h3 style="width:200px;float:left;">热门文档</h3>
+			<div class="fr">
+				<a href="{:U('doc/doclist',array('c'=>'hotdoc'))}">更多</a>
+			</div>
+		</div>
+		<div class="dochlist" style="margin:0px 10px">
+			<mtceo:doc type="lists" order="hits desc">
+				<volist name="data['list']" id="vo" offset="0" length="5">
+					<dl>
+						<dt>
+							<a href="{:U('doc/doccon',array('id'=>$vo['id']))}"><img src="{:docimg($vo['model'],$vo['id'])}" /></a>
+							<span class="icon {$vo.ext}"></span>
+						</dt>
+						<dd>
+							<a href="{:U('doc/doccon',array('id'=>$vo['id']))}">{$vo.title|msubstr=###,0,14}</a>
+						</dd>
+						<dd class="gray">{$vo.hits}人阅读</dd>
+
+					</dl>
+				</volist>
+
+		</div>
+		</mtceo:doc>
+
+	</div>
+
+</div>
+<div class="cright">
+	<div class="r-list">
+		<div class="totalcount">已有<s>{$totaldocnum}</s>份文档</div>
+		<div class="indexup">
+			<a href="{:U('doc/doc_share')}" class="cateicons midupbtn"></a>
+		</div>
+
+		<div class="indextitle">文档下载排行</div>
+		<div class="tabmenu">
+			<ul class="ranktab">
+
+				<li class="cur">本日</li>
+				<li class="tab2">本周</li>
+				<li class="tab2">本月</li>
+			</ul>
+		</div>
+
+		<div class="rank">
+			<ul>
+				<mtceo:doc type="lists" order="hits desc" how="down" day="1">
+
+					<volist name="data['list']" id="vo" offset="0" length="10">
+						<li>
+							<a href="{:U('doc/doccon',array('id'=>$vo['id']))}">{$vo.title|msubstr=###,0,12}</a>
+						</li>
+					</volist>
+				</mtceo:doc>
+			</ul>
+			<ul style="display:none;">
+				<mtceo:doc type="lists" order="hits desc" how="down" day="7">
+
+					<volist name="data['list']" id="vo" offset="0" length="10">
+						<li>
+							<a href="{:U('doc/doccon',array('id'=>$vo['id']))}">{$vo.title|msubstr=###,0,12}</a>
+						</li>
+					</volist>
+				</mtceo:doc>
+			</ul>
+			<ul style="display:none;">
+				<mtceo:doc type="lists" order="hits desc" how="down" day="30">
+
+					<volist name="data['list']" id="vo" offset="0" length="10">
+						<li>
+							<a href="{:U('doc/doccon',array('id'=>$vo['id']))}">{$vo.title|msubstr=###,0,12}</a>
+						</li>
+					</volist>
+				</mtceo:doc>
+			</ul>
+		</div>
+
+		<div class="indextitle">用户排行榜</div>
+		<div class="tabmenu">
+			<ul class="userrank">
+
+				<li class="cur">用户积分榜</li>
+				<li class="tab2">用户贡献榜</li>
+
+			</ul>
+		</div>
+
+		<div class="tablerank">
+			<table width="100%" border="0">
+				<tr>
+					<th width="30"></th>
+					<th width="110">用户名</th>
+					<th width="80">积分</th>
+				</tr>
+				<mtceo:user type="lists" how="score" order="roleid desc">
+
+					<volist name="data['list']" id="vo" offset="0" length="5">
+						<tr>
+							<td width="30"></td>
+							<td width="110">
+								<a href="{:U('member/mydoclist',array('uid'=>$vo['uid']))}">{$vo['uid']|getusername}</a>
+							</td>
+							<td width="80">{$vo.comcount}</td>
+						</tr>
+					</volist>
+				</mtceo:user>
+
+			</table>
+			<table width="100%" border="0" style="display:none;">
+				<tr>
+					<th width="30"></th>
+					<th width="110">用户名</th>
+					<th width="80">上传文档</th>
+				</tr>
+				<mtceo:user type="lists" how="doc" order="roleid desc">
+					<volist name="data['list']" id="vo" offset="0" length="5">
+						<tr>
+							<td width="30"></td>
+							<td width="110">
+								<a href="{:U('member/mydoclist',array('uid'=>$vo['uid']))}">{$vo['uid']|getusername}</a>
+							</td>
+							<td width="80">{$vo.comcount}</td>
+						</tr>
+					</volist>
+				</mtceo:user>
+			</table>
+		</div>
+
+	</div>
+	<div class="ad21070"></div>
+
+</div>
+<div class="clear"></div>
+
+<div class="flink">
+	<h3>友情链接：</h3>
+	<div class="flinktext">
+		<volist name="flink['text']" id="vo">
+			<a href="{$vo.url}" target="_blank" alt="{$vo.name}">{$vo.name}</a>
+		</volist>
+	</div>
+
+	<div class="flinkimg">
+		<ul>
+			<volist name="flink['img']" id="vo">
+				<li>
+					<a href="{$vo.url}" target="_blank"><img src="{:attach($vo['img'],'flink')}" alt="{$vo.name}" /></a>
+				</li>
+			</volist>
+		</ul>
+	</div>
+</div>
+
+<script>
+	$(function() {
+		var t = n = length = count = 0;
+		var length = $("#focus_img").find(".focus_box").length;
+		$("#focus_links").find("li").click(function() {
+			var num = $(this).index();
+			$("#focus_links li a").removeClass('cur');
+			$(this).find("a").addClass('cur');
+			count = (-1) * (num) * 557 + 'px';
+			$("#focus_img").animate({
+				left: count
+			}, "slow");
+		});
+		$("#focus_links").find("li").hover(function() {
+			clearInterval(t);
+			var num = $(this).index();
+			count = (-1) * (num) * 557 + 'px';
+			$("#focus_links li a").removeClass('cur');
+			$(this).find("a").addClass('cur');
+			$("#focus_img").animate({left: count}, "slow");
+		}, function() {
+			t = setInterval(showAuto, 3000);
+		});
+
+		t = setInterval(showAuto, 3000);
+
+		function showAuto() {
+			n = n >= (length - 1) ? 0 : n + 1;
+			$("#focus_links").find("li").eq(n).trigger("click");
+		}
+
+		$('.catelist1 li').each(function() {
+
+			$(this).mouseover(function() {
+
+				var id = $(this).attr('dataid');
+
+				$(this).find('.cateview').removeClass('disnone');
+
+			}).mouseout(function() {
+
+				$(this).find('.cateview').addClass('disnone');
+
+			});
+
+		});
+
+		$('.ranktab li').click(function() {
+
+			$('.ranktab li').removeClass();
+			$('.ranktab li').addClass('tab2');
+			$(this).removeClass('tab2');
+			$(this).addClass('cur');
+
+		});
+		$('.userrank li').click(function() {
+
+			$('.userrank li').removeClass();
+			$('.userrank li').addClass('tab2');
+			$(this).removeClass('tab2');
+			$(this).addClass('cur');
+
+		});
+
+		$('ul.ranktab').tabs('div.rank > ul');
+		$('ul.userrank').tabs('div.tablerank > table');
+
+	});
+</script>
+<include file="public:footer" />

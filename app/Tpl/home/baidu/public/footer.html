@@ -1,0 +1,26 @@
+<!--底部横幅广告位-->
+<div style="width:960px;margin:0 auto;margin-bottom:10px;">
+	{:R('advert/index', array(4), 'Widget')}
+</div>
+<div class="footer">
+	<div class="container">
+		<div class="col-md-12">
+			<p class="p-hide">版权所有：<span style="padding-right:10px;">美奇软件开发工作室</span>备案/许可证号：
+				<a href="http://www.beian.miit.gov.cn/" target="_blank">蜀ICP备19029089号-2</a>
+			</p>
+			<p>Copyright ©2018-2020 美奇文库 All Rights Reserved</p>
+		</div>
+	</div>
+</div>
+
+<script> 
+//初始化弹窗
+(function (d) {
+    d['okValue'] = lang.dialog_ok;
+    d['cancelValue'] = lang.dialog_cancel;
+    d['title'] = lang.dialog_title;
+})($.dialog.defaults);
+</script>
+<script src="__PUBLIC__/js/var.js"></script>
+</body>
+</html>

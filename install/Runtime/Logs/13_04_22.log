@@ -1,0 +1,287 @@
+[ 2013-04-22T10:44:44+08:00 ] 127.0.0.1 /sscms/install.php
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001192s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001292s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001815s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001914s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.061202s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.061330s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001358s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.001262s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.001139s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.001195s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005217s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHP100.COM1\SScms\install\Lang\common.php:1) D:\PHP100.COM1\SScms\include\Lib\Core\View.class.php 第 88 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHP100.COM1\SScms\install\Lang\common.php:1) D:\PHP100.COM1\SScms\include\Lib\Core\View.class.php 第 89 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHP100.COM1\SScms\install\Lang\common.php:1) D:\PHP100.COM1\SScms\include\Lib\Core\View.class.php 第 90 行.
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001143s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001218s ]
+
+[ 2013-04-22T10:51:37+08:00 ] 127.0.0.1 /sscms/install.php
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001172s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001268s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001782s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001867s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.017794s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017902s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001335s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.001147s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.001104s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.001189s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004980s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHP100.COM1\SScms\install\Lang\common.php:1) D:\PHP100.COM1\SScms\include\Lib\Core\View.class.php 第 88 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHP100.COM1\SScms\install\Lang\common.php:1) D:\PHP100.COM1\SScms\include\Lib\Core\View.class.php 第 89 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHP100.COM1\SScms\install\Lang\common.php:1) D:\PHP100.COM1\SScms\include\Lib\Core\View.class.php 第 90 行.
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001143s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001217s ]
+
+[ 2013-04-22T10:51:44+08:00 ] 127.0.0.1 /sscms/install.php?m=index&a=setconf
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000756s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000942s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001172s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001256s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.050747s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.050855s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000876s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000724s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000663s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000767s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003240s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHP100.COM1\SScms\install\Lang\common.php:1) D:\PHP100.COM1\SScms\include\Lib\Core\View.class.php 第 88 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHP100.COM1\SScms\install\Lang\common.php:1) D:\PHP100.COM1\SScms\include\Lib\Core\View.class.php 第 89 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHP100.COM1\SScms\install\Lang\common.php:1) D:\PHP100.COM1\SScms\include\Lib\Core\View.class.php 第 90 行.
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000728s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000805s ]
+
+[ 2013-04-22T10:52:00+08:00 ] 127.0.0.1 /sscms/install.php?m=index&a=install
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000324s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000417s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.000742s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000824s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.050624s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.050730s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000406s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000291s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000219s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000330s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001446s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHP100.COM1\SScms\install\Lang\common.php:1) D:\PHP100.COM1\SScms\include\Lib\Core\View.class.php 第 88 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHP100.COM1\SScms\install\Lang\common.php:1) D:\PHP100.COM1\SScms\include\Lib\Core\View.class.php 第 89 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHP100.COM1\SScms\install\Lang\common.php:1) D:\PHP100.COM1\SScms\include\Lib\Core\View.class.php 第 90 行.
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000290s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000362s ]
+
+[ 2013-04-22T10:52:01+08:00 ] 127.0.0.1 /sscms/install.php?m=index&a=finish_done
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001239s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001353s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHP100.COM1\SScms\install\Lang\common.php:1) D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 177 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+
+[ 2013-04-22T10:52:03+08:00 ] 127.0.0.1 /sscms/install.php?m=index&a=finish
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000322s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000414s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.000755s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000842s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.076858s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.076971s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000401s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000280s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000219s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000332s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001435s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHP100.COM1\SScms\install\Lang\common.php:1) D:\PHP100.COM1\SScms\include\Lib\Core\View.class.php 第 88 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHP100.COM1\SScms\install\Lang\common.php:1) D:\PHP100.COM1\SScms\include\Lib\Core\View.class.php 第 89 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHP100.COM1\SScms\install\Lang\common.php:1) D:\PHP100.COM1\SScms\include\Lib\Core\View.class.php 第 90 行.
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000287s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000359s ]
+
+[ 2013-04-22T10:55:59+08:00 ] 127.0.0.1 /sscms/install.php
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000756s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000860s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001834s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001924s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.023192s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023313s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001298s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.001176s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.001069s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.001236s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004988s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHP100.COM1\SScms\install\Lang\common.php:1) D:\PHP100.COM1\SScms\include\Lib\Core\View.class.php 第 88 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHP100.COM1\SScms\install\Lang\common.php:1) D:\PHP100.COM1\SScms\include\Lib\Core\View.class.php 第 89 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHP100.COM1\SScms\install\Lang\common.php:1) D:\PHP100.COM1\SScms\include\Lib\Core\View.class.php 第 90 行.
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001180s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001255s ]
+
+[ 2013-04-22T10:56:01+08:00 ] 127.0.0.1 /sscms/install.php?m=index&a=setconf
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000325s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000420s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001214s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001302s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.040262s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.040370s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000910s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000734s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000658s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000805s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003312s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHP100.COM1\SScms\install\Lang\common.php:1) D:\PHP100.COM1\SScms\include\Lib\Core\View.class.php 第 88 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHP100.COM1\SScms\install\Lang\common.php:1) D:\PHP100.COM1\SScms\include\Lib\Core\View.class.php 第 89 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHP100.COM1\SScms\install\Lang\common.php:1) D:\PHP100.COM1\SScms\include\Lib\Core\View.class.php 第 90 行.
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000730s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000804s ]
+
+[ 2013-04-22T10:56:14+08:00 ] 127.0.0.1 /sscms/install.php?m=index&a=install
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000324s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000422s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.000752s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000842s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.033756s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033878s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000413s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000282s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000217s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000337s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001446s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHP100.COM1\SScms\install\Lang\common.php:1) D:\PHP100.COM1\SScms\include\Lib\Core\View.class.php 第 88 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHP100.COM1\SScms\install\Lang\common.php:1) D:\PHP100.COM1\SScms\include\Lib\Core\View.class.php 第 89 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHP100.COM1\SScms\install\Lang\common.php:1) D:\PHP100.COM1\SScms\include\Lib\Core\View.class.php 第 90 行.
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000287s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000358s ]
+
+[ 2013-04-22T10:56:15+08:00 ] 127.0.0.1 /sscms/install.php?m=index&a=finish_done
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000321s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000422s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHP100.COM1\SScms\install\Lang\common.php:1) D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 177 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\PHP100.COM1\SScms\install\Lib\Action\indexAction.class.php 第 249 行.
+
+[ 2013-04-22T10:56:33+08:00 ] 127.0.0.1 /sscms/install.php?m=index&a=finish
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000327s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000422s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.000776s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000880s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.026454s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026583s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000397s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000292s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000219s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000333s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001442s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHP100.COM1\SScms\install\Lang\common.php:1) D:\PHP100.COM1\SScms\include\Lib\Core\View.class.php 第 88 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHP100.COM1\SScms\install\Lang\common.php:1) D:\PHP100.COM1\SScms\include\Lib\Core\View.class.php 第 89 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHP100.COM1\SScms\install\Lang\common.php:1) D:\PHP100.COM1\SScms\include\Lib\Core\View.class.php 第 90 行.
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000287s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000365s ]
+

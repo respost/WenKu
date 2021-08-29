@@ -1,0 +1,65 @@
+<include file="public:head" />
+<include file="ucenter:ucleft" />
+
+<div class="ucright">
+<div class="menuname">
+<ul><li class="cur"><a href="#">我的收藏</a></li>
+
+</ul>
+<div class="fr"><a href="{:U('doc/doc_share')}" class="ucbtn ucupbtn">上传我的文档</a></div>
+
+<b><s></s></b>
+
+</div>
+<div class="submenu">
+<ul>
+</ul>
+
+
+<div class="fr">
+<mtceo:doctotalnum type="lists" uid="$uid" usertype="wysc" order="add_time desc">
+<s>文档：</s><i>{$data.doc}份</i><em>|</em>
+<s>评分：</s><i>{$data.raty}人</i><em>|</em>
+<s>积分：</s><i>{$data.score}</i>
+</mtceo:doctotalnum>
+</div>
+
+</div>
+
+<div class="clear"></div>
+
+<table width="100%" border="0" id="ucform">
+  <tr>
+    <th width="241">文档名称</th>
+    <th width="90">上传者</th>
+    <th width="120">发布时间</th>
+    <th width="82" style="border-right:1px solid #e5e5e5;">操作</th>
+  </tr>
+  <mtceo:doc type="lists" uid="$uid" usertype="wysc" order="add_time desc" pagenum="15">
+  <volist name="data['list']" id="vo">
+  <tr>
+    <td><div class="icon {$vo.ext}"></div><a href="{:U('doc/doccon',array('id'=>$vo['id']))}">{$vo.title|msubstr=###,0,18}</a></td>
+    <td><a href="{:U('member/mydoclist',array('uid'=>$vo['uid']))}">{$vo.uid|getusername}</a></td>
+    <td>{$vo.add_time|fdate}</td>
+    <td><a href="javascript:void(0);" data-uri="{:U('common/deloperate',array('id'=>$vo['id'],'typeid'=>1))}" onclick="front_deloperate(2,this);" >删除</a></td>
+  </tr>
+  </volist>
+  
+</table>
+
+
+
+
+<div class="page-nav page-center"> 
+<div class="page-inner"> 
+<div class="page-content">
+{$data['page']}
+</div> </div></div>
+</mtceo:doc>
+</div>
+
+<div class="clear">
+
+</div>
+
+<include file="public:footer" />

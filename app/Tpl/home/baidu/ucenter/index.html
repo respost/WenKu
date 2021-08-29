@@ -1,0 +1,114 @@
+<include file="public:head" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/js/calendar/calendar-blue.css"/>
+<script type="text/javascript" src="__PUBLIC__/js/calendar/calendar.js"></script>
+<script src="__PUBLIC__/js/area/area.js"></script>
+<include file="ucenter:ucleft" />
+<div class="ucright">
+<div class="menuname">
+<ul><li class="cur"><a href="#">个人中心</a></li>
+
+</ul>
+
+
+<b><s></s></b>
+
+</div>
+<div class="submenu">
+<ul>
+<li><a href="{:U('ucenter/index')}" class="cur">个人资料</a></li>
+<li><a href="{:U('ucenter/setavatar')}">头像修改</a></li>
+<li><a href="{:U('ucenter/setpassword')}">密码安全</a></li>
+<li><a href="{:U('ucenter/setmail')}">邮箱绑定</a></li>
+</ul>
+
+
+
+
+</div>
+<div class="setinfo">
+<form id="info_form" action="{:U('ucenter/index')}" method="post" >
+<table width="100%" border="0">
+
+  
+  <tr>
+    <td align="right">性别：</td>
+    <td>
+<input type="radio" id="id_male" name="gender" <if condition="$info['gender'] eq 1">checked</if> value="1" />&nbsp;
+<label for="id_male">男</label> &nbsp;
+<input type="radio" id="id_female" name="gender" <if condition="$info['gender'] eq 0">checked</if> value="0" />&nbsp;
+<label for="id_female">女</label>
+<input type="radio" id="id_bm" name="gender" <if condition="$info['gender'] eq 2">checked</if> value="2" />&nbsp;
+<label for="id_bm">保密</label>
+</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="right">生日：</td>
+    <td>
+    <input type="text" name="birthday" id="birthday" class="ins" size="12" value="{$info.byear}-{$info.bmonth}-{$info.bday}" />
+    </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="right">地区：</td>
+    <td id="areadata"></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="80" align="right">个人标签：</td>
+    <td><input type="text" name="tags" class="ins1" value="{$info.tags}" />&nbsp;&nbsp;标签请用半角逗号,隔开</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td width="80" align="right">联系QQ：</td>
+    <td><input type="text" name="contact" class="ins" value="{$info.contact}" /></td>
+    <td>&nbsp;</td>
+  </tr>
+    <tr>
+    <td align="right">自我介绍：</td>
+    <td><textarea name="intro" class="txt" >{$info.intro}</textarea></td>
+    <td>&nbsp;</td>
+  </tr>
+    <tr>
+    <td align="right"></td>
+    <td> <input type="submit" class="wk-btn2 g-n-btns" value="保 存" />&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" onClick="window.location.replace(location.href)" class="wk-btn2 g-n-canbtns" value="取 消" /></td>
+    <td></td>
+  </tr>
+ 
+</table>
+	</form>
+
+</div>
+
+</div>
+
+<div class="clear">
+
+</div>
+
+<script>
+Calendar.setup({
+	inputField : "birthday",
+	ifFormat   : "%Y-%m-%d",
+	showsTime  : false,
+	timeFormat : "24"
+});
+$(function(){
+$('#info_form').ajaxForm({success:complate,dataType:'json'});
+	
+	function complate(result){
+
+		
+		if(result.status == 1){
+			
+			
+            $.mtceo.tip({content:result.msg});
+            window.location.reload();
+		} else {
+			$.mtceo.tip({content:result.msg, icon:'alert'});
+		}
+	}
+	$('#areadata').province_city_county("{$info.province}","{$info.city}","{$info.county}");
+});
+</script>
+<include file="public:footer" />

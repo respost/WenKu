@@ -1,0 +1,68 @@
+<include file="public:head" />
+<include file="ucenter:ucleft" />
+<div class="ucright">
+<div class="menuname">
+<ul><li class="cur"><a href="#">我的消息</a></li>
+
+</ul>
+
+
+<b><s></s></b>
+
+</div>
+<div class="submenu">
+<ul>
+<li><a href="{:U('ucenter/usermail')}" class="cur">消息列表</a></li>
+
+</ul>
+
+
+
+
+</div>
+<div class="userlist">
+<ul style="margin-bottom:10px;">
+<volist name="data['list']" id="vo" empty="暂无消息">
+<li <if condition="$vo['fromid'] neq $uid">class="maillist"</if>>
+<if condition="$vo['fromid'] eq $uid">
+<input type="checkbox" class="check J_checkitem" value="{$vo.id}"/></if>
+
+<if condition="$vo.is_sys eq 1"><font color=red>[公共<else /><font color=blue>[私信</if>]</font>
+<a href="{:U('ucenter/mailmess',array('id'=>$vo['id']))}">{$vo.title}
+
+</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+<s class="pbclass" datauri="{:U('ucenter/pbitem',array('id'=>$vo['id']))}" onclick="pb_item(this)">屏蔽</s>
+<if condition="(($vo['new'] eq 1) AND ($vo['toid'] eq $uid) ) OR ($vo['renew'] eq 1)">
+<s>(新)</s></if>
+
+<div class="fr">发布时间：{$vo.add_time|fdate}</div>
+</li>
+</volist>
+
+
+
+
+</ul>
+<label class="select_all">
+<input type="checkbox" name="checkall" class="check J_checkall">全选/取消</label>
+<input type="button" class="clear wk-btn2 g-n-canbtns" data-tdtype="batch_action" data-acttype="ajax" data-uri="{:U('ucenter/mail_del')}" data-name="id"  data-msg="{:L('confirm_delete')}" value="删   除" />
+
+</div>
+
+
+<div class="page-nav page-center"> 
+<div class="page-inner"> 
+<div class="page-content">
+{$data['page']}
+</div> </div></div>
+
+</div>
+
+<div class="clear">
+
+</div>
+
+<include file="public:footer" />

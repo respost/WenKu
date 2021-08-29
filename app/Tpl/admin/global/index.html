@@ -1,0 +1,112 @@
+<include file="public:header" />
+<!--网站设置-->
+<div class="pad_lr_10">
+	<form id="info_form" action="{:u('global/edit')}" method="post">
+	<table width="100%" class="table_form">
+        <tr>
+            <th width="150">{:L('site_name')} :</th>
+            <td><input type="text" name="setting[site_name]" class="input-text" size="50" value="{:C('mtceo_site_name')}"></td>
+        </tr>
+        <tr>
+            <th width="150">网站链接 :</th>
+            <td><input type="text" name="setting[site_url]" class="input-text" size="50" value="{:C('mtceo_site_url')}">&nbsp;&nbsp;&nbsp;&nbsp;输入完整链接，必须加上http://</td>
+        </tr>
+        <tr>
+            <th>{:L('seo_title')} :</th>
+            <td><input type="text" name="setting[site_title]" class="input-text" size="50" value="{:C('mtceo_site_title')}"></td>
+        </tr>
+        <tr>
+            <th>{:L('seo_keys')} :</th>
+            <td><input type="text" name="setting[site_keyword]" class="input-text" size="50" value="{:C('mtceo_site_keyword')}"></td>
+        </tr>
+        <tr>
+            <th>{:L('seo_desc')} :</th>
+            <td><textarea rows="3" cols="50" name="setting[site_description]">{:C('mtceo_site_description')}</textarea></td>
+        </tr>
+        <tr>
+            <th>网站备案信息 :</th>
+            <td><input type="text" name="setting[site_icp]" class="input-text" size="50" value="{:C('mtceo_site_icp')}"></td>
+        </tr>
+                <tr>
+            <th>{:L('score_name')} :</th>
+            <td><input type="text" name="setting[score_name]" class="input-text" size="50" value="{:C('mtceo_score_name')}"></td>
+        </tr>
+        <tr>
+        	<th>是否允许充值 :</th>
+        	<td>
+            	<label><input type="radio"  <if condition="C('mtceo_score_pay.isscore') eq '1'">checked="checked"</if> value="1" name="setting[score_pay][isscore]"> 是</label> &nbsp;&nbsp;
+                <label><input type="radio" <if condition="C('mtceo_score_pay.isscore') eq '0'">checked="checked"</if> value="0" name="setting[score_pay][isscore]"> 否</label>
+            </td>
+    	</tr>
+        <tr>
+            <th>积分充值比例 :</th>
+            <td><input type="text" name="setting[score_pay][getscore]" class="input-text" size="10" value="{:C('mtceo_score_pay.getscore')}">&nbsp;&nbsp;&nbsp;&nbsp;例如：填写10则为1元人民币兑换10个积分</td>
+        </tr>
+        <tr>
+        	<th>是否允许提现 :</th>
+        	<td>
+            	<label><input type="radio" <if condition="C('mtceo_score_pay.iscash') eq '1'">checked="checked"</if> value="1" name="setting[score_pay][iscash]"> 是</label> &nbsp;&nbsp;
+                <label><input type="radio" <if condition="C('mtceo_score_pay.iscash') eq '0'">checked="checked"</if> value="0" name="setting[score_pay][iscash]"> 否</label>
+            </td>
+    	</tr>
+        <tr>
+            <th>提现抽成比例 :</th>
+            <td><input type="text" name="setting[score_pay][getcash]" class="input-text" size="3" value="{:C('mtceo_score_pay.getcash')}">%</td>
+        </tr>
+         <tr>
+            <th>文档预览前广告时间 :</th>
+            <td><input type="text" name="setting[score_pay][adtime]" class="input-text" size="10" value="{:C('mtceo_score_pay.adtime')}">秒</td>
+        </tr>
+        <tr>
+            <th>积分商品缩略图尺寸(大) :</th>
+            <td>
+            宽:<input type="text" name="setting[score_item_img][bwidth]" class="input-text" size="5" onkeyup="this.value=this.value.replace(/[^0-9.]/g,'')" onafterpaste="this.value=this.value.replace(/[^0-9.]/g,'')" value="{:C('mtceo_score_item_img.bwidth')}">px
+           &nbsp;&nbsp;&nbsp;&nbsp;
+             高:<input type="text" name="setting[score_item_img][bheight]" class="input-text" size="5" onkeyup="this.value=this.value.replace(/[^0-9.]/g,'')" onafterpaste="this.value=this.value.replace(/[^0-9.]/g,'')" value="{:C('mtceo_score_item_img.bheight')}">px
+            </td>
+        </tr>
+        <tr>
+            <th>积分商品缩略图尺寸(小) :</th>
+            <td>
+            宽:<input type="text" name="setting[score_item_img][swidth]" class="input-text" size="5" onkeyup="this.value=this.value.replace(/[^0-9.]/g,'')" onafterpaste="this.value=this.value.replace(/[^0-9.]/g,'')" value="{:C('mtceo_score_item_img.swidth')}">px
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            高:<input type="text" name="setting[score_item_img][sheight]" class="input-text" size="5" onkeyup="this.value=this.value.replace(/[^0-9.]/g,'')" onafterpaste="this.value=this.value.replace(/[^0-9.]/g,'')" value="{:C('mtceo_score_item_img.sheight')}">px
+            </td>
+        </tr>
+         
+        <tr>
+            <th>{:L('statistics_code')} :</th>
+            <td><textarea rows="3" cols="50" name="setting[statistics_code]">{:C('mtceo_statistics_code')}</textarea></td>
+        </tr>
+    	<tr>
+        	<th>{:L('site_status')} :</th>
+        	<td>
+            	<label><input type="radio" class="J_change_status" <if condition="C('mtceo_site_status') eq '1'">checked="checked"</if> value="1" name="setting[site_status]"> {:L('open')}</label> &nbsp;&nbsp;
+                <label><input type="radio" class="J_change_status" <if condition="C('mtceo_site_status') eq '0'">checked="checked"</if> value="0" name="setting[site_status]"> {:L('close')}</label>
+            </td>
+    	</tr>
+        <tr id="J_closed_reason" <if condition="C('mtceo_site_status') eq 1">class="hidden"</if>>
+        	<th>{:L('closed_reason')} :</th>
+        	<td><textarea rows="4" cols="50" name="setting[closed_reason]" id="closed_reason">{:C('mtceo_closed_reason')}</textarea></td>
+    	</tr>
+        <tr>
+        	<th></th>
+        	<td><input type="hidden" name="menuid"  value="{$menuid}"/><input type="submit" class="btn btn_submit" value="{:L('submit')}"/></td>
+    	</tr>
+	</table>
+	</form>
+</div>
+<include file="public:footer" />
+<script>
+$(function(){
+    $(document).on('click','.J_change_status', function(){
+        if($(this).val() == '0'){
+            $('#J_closed_reason').fadeIn();
+        }else{
+            $('#J_closed_reason').fadeOut();
+        }
+    });
+});
+</script>
+</body>
+</html>

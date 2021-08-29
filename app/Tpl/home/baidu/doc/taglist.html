@@ -1,0 +1,25 @@
+<include file="public:head" />
+<div class="cleft">
+<div class="h1title">所有标签</div>
+
+<div class="taglist">
+<ul>
+<volist name="taglist['list']" id="vo">
+<li><a href="{:U('doc/doclist',array('w'=>$vo['id']))}">{$vo.name}</a>({$vo.count})</li>
+</volist>
+</ul>
+</div>
+<div class="page">
+
+{$taglist['page']}
+</div>
+
+</div>
+<div class="cright">
+
+
+<div class="singlea"><a href="javascript:history.go(-1)">返回上一级>>>>>></a></div>
+
+</div>
+
+<include file="public:footer" />

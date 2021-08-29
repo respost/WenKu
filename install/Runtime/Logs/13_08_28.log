@@ -1,0 +1,140 @@
+[ 2013-08-28T21:46:15+08:00 ] 127.0.0.1 /mtceo/install.php
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000469s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000635s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.002491s ]
+INFO: [ view_template ] --END-- [ RunTime:0.002584s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.029095s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029180s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.002480s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.002192s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.003366s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.003111s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.011441s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\web\mtceo\install\Lang\common.php:1) D:\web\mtceo\mtceo\Lib\Core\View.class.php 第 88 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\web\mtceo\install\Lang\common.php:1) D:\web\mtceo\mtceo\Lib\Core\View.class.php 第 89 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\web\mtceo\install\Lang\common.php:1) D:\web\mtceo\mtceo\Lib\Core\View.class.php 第 90 行.
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.003082s ]
+INFO: [ view_end ] --END-- [ RunTime:0.003170s ]
+
+[ 2013-08-28T21:46:18+08:00 ] 127.0.0.1 /mtceo/install.php?m=index&a=setconf
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000310s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000416s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001126s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001255s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.021842s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021948s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000613s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000499s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000458s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000520s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002258s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\web\mtceo\install\Lang\common.php:1) D:\web\mtceo\mtceo\Lib\Core\View.class.php 第 88 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\web\mtceo\install\Lang\common.php:1) D:\web\mtceo\mtceo\Lib\Core\View.class.php 第 89 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\web\mtceo\install\Lang\common.php:1) D:\web\mtceo\mtceo\Lib\Core\View.class.php 第 90 行.
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000485s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000542s ]
+
+[ 2013-08-28T21:46:30+08:00 ] 127.0.0.1 /mtceo/install.php?m=index&a=install
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000314s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000434s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001254s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001375s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.011502s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011629s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000751s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000513s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000451s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000508s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002407s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\web\mtceo\install\Lang\common.php:1) D:\web\mtceo\mtceo\Lib\Core\View.class.php 第 88 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\web\mtceo\install\Lang\common.php:1) D:\web\mtceo\mtceo\Lib\Core\View.class.php 第 89 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\web\mtceo\install\Lang\common.php:1) D:\web\mtceo\mtceo\Lib\Core\View.class.php 第 90 行.
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000486s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000543s ]
+
+[ 2013-08-28T21:46:34+08:00 ] 127.0.0.1 /mtceo/install.php?m=index&a=finish_done
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000342s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000466s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\web\mtceo\install\Lang\common.php:1) D:\web\mtceo\install\Lib\Action\indexAction.class.php 第 175 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\web\mtceo\install\Lib\Action\indexAction.class.php 第 250 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\web\mtceo\install\Lib\Action\indexAction.class.php 第 250 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\web\mtceo\install\Lib\Action\indexAction.class.php 第 250 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\web\mtceo\install\Lib\Action\indexAction.class.php 第 250 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\web\mtceo\install\Lib\Action\indexAction.class.php 第 250 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\web\mtceo\install\Lib\Action\indexAction.class.php 第 250 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\web\mtceo\install\Lib\Action\indexAction.class.php 第 250 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\web\mtceo\install\Lib\Action\indexAction.class.php 第 250 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\web\mtceo\install\Lib\Action\indexAction.class.php 第 250 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\web\mtceo\install\Lib\Action\indexAction.class.php 第 250 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\web\mtceo\install\Lib\Action\indexAction.class.php 第 250 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\web\mtceo\install\Lib\Action\indexAction.class.php 第 250 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\web\mtceo\install\Lib\Action\indexAction.class.php 第 250 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\web\mtceo\install\Lib\Action\indexAction.class.php 第 250 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\web\mtceo\install\Lib\Action\indexAction.class.php 第 250 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\web\mtceo\install\Lib\Action\indexAction.class.php 第 250 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\web\mtceo\install\Lib\Action\indexAction.class.php 第 250 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\web\mtceo\install\Lib\Action\indexAction.class.php 第 250 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\web\mtceo\install\Lib\Action\indexAction.class.php 第 250 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\web\mtceo\install\Lib\Action\indexAction.class.php 第 250 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\web\mtceo\install\Lib\Action\indexAction.class.php 第 250 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\web\mtceo\install\Lib\Action\indexAction.class.php 第 250 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\web\mtceo\install\Lib\Action\indexAction.class.php 第 250 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\web\mtceo\install\Lib\Action\indexAction.class.php 第 250 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\web\mtceo\install\Lib\Action\indexAction.class.php 第 250 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\web\mtceo\install\Lib\Action\indexAction.class.php 第 250 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\web\mtceo\install\Lib\Action\indexAction.class.php 第 250 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\web\mtceo\install\Lib\Action\indexAction.class.php 第 250 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\web\mtceo\install\Lib\Action\indexAction.class.php 第 250 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\web\mtceo\install\Lib\Action\indexAction.class.php 第 250 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\web\mtceo\install\Lib\Action\indexAction.class.php 第 250 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\web\mtceo\install\Lib\Action\indexAction.class.php 第 250 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\web\mtceo\install\Lib\Action\indexAction.class.php 第 250 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\web\mtceo\install\Lib\Action\indexAction.class.php 第 250 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\web\mtceo\install\Lib\Action\indexAction.class.php 第 250 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\web\mtceo\install\Lib\Action\indexAction.class.php 第 250 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\web\mtceo\install\Lib\Action\indexAction.class.php 第 250 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\web\mtceo\install\Lib\Action\indexAction.class.php 第 250 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\web\mtceo\install\Lib\Action\indexAction.class.php 第 250 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\web\mtceo\install\Lib\Action\indexAction.class.php 第 250 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\web\mtceo\install\Lib\Action\indexAction.class.php 第 250 行.
+NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. D:\web\mtceo\install\Lib\Action\indexAction.class.php 第 250 行.
+
+[ 2013-08-28T21:46:36+08:00 ] 127.0.0.1 /mtceo/install.php?m=index&a=finish
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000372s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000501s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.000947s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001081s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.011759s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011916s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000458s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000345s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000279s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000366s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001716s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\web\mtceo\install\Lang\common.php:1) D:\web\mtceo\mtceo\Lib\Core\View.class.php 第 88 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\web\mtceo\install\Lang\common.php:1) D:\web\mtceo\mtceo\Lib\Core\View.class.php 第 89 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\web\mtceo\install\Lang\common.php:1) D:\web\mtceo\mtceo\Lib\Core\View.class.php 第 90 行.
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000340s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000442s ]
+

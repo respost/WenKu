@@ -1,0 +1,67 @@
+<!--添加角色-->
+<div class="dialog_content">
+    <form id="info_form" name="info_form" action="{:u('user_role/add')}" method="post">
+    <table width="100%" class="table_form">
+        <tr>
+            <th width="80">{:L('role_name')} :</th>
+            <td><input type="text" name="name" id="name" class="input-text"></td>
+        </tr>
+        <tr>
+            <th>{:L('role_score')} :</th>
+            <td><input type="text" name="score" id="score" class="input-text"></td>
+        </tr>
+        <tr>
+            <th>{:L('enabled')} :</th>
+            <td>
+                <input type="radio" name="status" class="radio_style" value="1" checked="checked"> &nbsp;{:L('yes')}&nbsp;&nbsp;&nbsp;
+                <input type="radio" name="status" class="radio_style" value="0"> &nbsp;{:L('no')}
+            </td>
+        </tr>
+                <tr>
+            <th>{:L('role_admin')} :</th>
+            <td>
+                <input type="radio" name="isAdmin" class="radio_style" value="1" checked="checked"> &nbsp;{:L('yes')}&nbsp;&nbsp;&nbsp;
+                <input type="radio" name="isAdmin" class="radio_style" value="0"> &nbsp;{:L('no')}
+            </td>
+        </tr>
+    </table>
+    </form>
+</div>
+<script>
+var check_name_url = "{:U('user_role/ajax_check_name')}";
+$(function(){
+	$.formValidator.initConfig({formID:"info_form",theme:'mt_theme',mode:'AutoTip',inIframe:true,ajax:true});
+	
+    $("#name").formValidator({onFocus:"3~16字符"}).inputValidator({min:3,max:16,onError:"3~16字符"})
+    .ajaxValidator({
+    	
+    	url : check_name_url,
+		dataType : 'json',
+		async:'true',
+		
+		
+		success : function (result){	
+
+    	   if(!result.status){
+                return false;
+			}else{
+                return true;
+			}
+		},
+		onError:"该用户组已存在",
+		onWait:"正在检验",
+		
+});
+    $("#score").formValidator({onFocus:"必须为数字"}).regexValidator({regExp:"num1",dataType:"enum",onError:"不是正整数"});
+    $('#info_form').ajaxForm({success:complate,dataType:'json'});
+    function complate(result){
+        if(result.status == 1){
+            $.dialog.get(result.dialog).close();
+            $.mtceo.tip({content:result.msg});
+            window.location.reload();
+        } else {
+            $.mtceo.tip({content:result.msg, icon:'alert'});
+        }
+    }
+});
+</script>

@@ -1,0 +1,67 @@
+<include file="public:head" />
+<include file="ucenter:ucleft" />
+
+<div class="ucright">
+<div class="submenu">
+<h3>积分值</h3>
+</div>
+<div class="scorelist">
+<ul><li><p>总积分</p><s>{$info.score}</s></li>
+<li><p>上传文档</p><s>{$info.up}</s></li>
+<li><p>文档被下载</p><s>{$info.doc}</s></li>
+<li><p>系统奖励</p><s>{$info.system}</s></li>
+<li><p>文库消费</p><s>{$info.down}</s></li>
+<li><p>文库惩罚</p><s>{$info.chengfa}</s></li>
+<li><p>充值所得</p><s>{$info.pay}</s></li>
+</ul>
+<ul>
+<li><p>论坛兑换</p><s>{$info.credit}</s></li>
+</ul>
+
+
+
+</div>
+
+<div class="submenu">
+<h3>积分充值</h3>
+</div>
+<div class="setinfo">
+<form id="info_form" action="{:U('ucenter/pay')}" method="post" >
+<div class="paylist">
+<ul>
+  <volist name="paymentdata" id="vo">
+	<li><span>
+	  <input name="payid" <eq name="key" value="0">checked="checked"</eq> type="radio" value="{$vo.mark}" id="{$vo.mark}" /></span>
+	    <label for="{$vo.mark}"><img src="{:attach($vo['logo'],'payment')}" alt="{$vo.name}" /></label>
+	</li>
+  </volist>
+</ul></div>
+
+<table width="100%" border="0">
+  
+
+  
+<if condition="$paymentdata neq null">
+  
+  <tr>
+    <td width="80" align="right">充值金额：</td>
+    <td><input type="text" name="cash" class="ins" value="" /></td>
+    <td>1人民币可兑换{:C('mtceo_score_pay.getscore')}{:C('mtceo_score_name')}</td>
+  </tr>
+  <tr>
+    <td align="right"></td>
+    <td> <input type="submit" class="wk-btn2 g-n-btns" value="充  值" /></td>
+    <td></td>
+  </tr>
+</if> 
+</table>
+	</form>
+
+</div>
+</div>
+
+<div class="clear">
+
+</div>
+<include file="public:footer" />
+

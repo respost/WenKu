@@ -1,0 +1,24 @@
+<script src="__PUBLIC__/js/jquery-1.8.3.js"></script>
+<script src="__PUBLIC__/js/jquery.tools.min.js"></script>
+<script src="__PUBLIC__/js/formvalidator.js"></script>
+<script src="__PUBLIC__/js/formValidatorRegex.js"></script>
+<script src="__PUBLIC__/js/mtceo.js"></script>
+<script src="__PUBLIC__/js/area/area.js"></script>
+<script src="__PUBLIC__/js/jquery.form.js"></script>
+<script src="__PUBLIC__/js/admin.js"></script>
+<script>
+//初始化弹窗
+(function (d) {
+    d['okValue'] = lang.dialog_ok;
+    d['cancelValue'] = lang.dialog_cancel;
+    d['title'] = lang.dialog_title;
+})($.dialog.defaults);
+</script>
+<present name="list_table">
+<script src="__PUBLIC__/js/listTable.js"></script>
+<script>
+$(function(){
+	$('.J_tablelist').listTable();
+});
+</script>
+</present>

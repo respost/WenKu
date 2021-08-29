@@ -1,0 +1,101 @@
+[ 2013-03-31T09:28:23+08:00 ] /SScms/install.php | INFO: Tag[ app_begin ] --START--
+[ 2013-03-31T09:28:23+08:00 ] /SScms/install.php | INFO: Run ReadHtmlCache Behavior [ RunTime:0.011901s ]
+[ 2013-03-31T09:28:23+08:00 ] /SScms/install.php | INFO: Tag[ app_begin ] --END-- [ RunTime:0.013216s ]
+[ 2013-03-31T09:28:23+08:00 ] /SScms/install.php | NOTIC: [8] Use of undefined constant IS_POST - assumed 'IS_POST' indexAction.class.php 第 18 行.
+[ 2013-03-31T09:28:23+08:00 ] /SScms/install.php | INFO: Tag[ view_template ] --START--
+[ 2013-03-31T09:28:23+08:00 ] /SScms/install.php | INFO: Run LocationTemplate Behavior [ RunTime:0.018512s ]
+[ 2013-03-31T09:28:23+08:00 ] /SScms/install.php | INFO: Tag[ view_template ] --END-- [ RunTime:0.018586s ]
+[ 2013-03-31T09:28:23+08:00 ] /SScms/install.php | INFO: Tag[ view_parse ] --START--
+[ 2013-03-31T09:28:23+08:00 ] /SScms/install.php | INFO: Run ParseTemplate Behavior [ RunTime:0.134067s ]
+[ 2013-03-31T09:28:23+08:00 ] /SScms/install.php | INFO: Tag[ view_parse ] --END-- [ RunTime:0.134146s ]
+[ 2013-03-31T09:28:23+08:00 ] /SScms/install.php | INFO: Tag[ view_filter ] --START--
+[ 2013-03-31T09:28:23+08:00 ] /SScms/install.php | INFO: Run ContentReplace Behavior [ RunTime:0.011029s ]
+[ 2013-03-31T09:28:23+08:00 ] /SScms/install.php | INFO: Run TokenBuild Behavior [ RunTime:0.003788s ]
+[ 2013-03-31T09:28:23+08:00 ] /SScms/install.php | INFO: Run WriteHtmlCache Behavior [ RunTime:0.006348s ]
+[ 2013-03-31T09:28:23+08:00 ] /SScms/install.php | INFO: Run ShowRuntime Behavior [ RunTime:0.008174s ]
+[ 2013-03-31T09:28:23+08:00 ] /SScms/install.php | INFO: Tag[ view_filter ] --END-- [ RunTime:0.029508s ]
+[ 2013-03-31T09:28:23+08:00 ] /SScms/install.php | NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\web\SScms\install\Lang\common.php:1) View.class.php 第 120 行.
+[ 2013-03-31T09:28:23+08:00 ] /SScms/install.php | NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\web\SScms\install\Lang\common.php:1) View.class.php 第 121 行.
+[ 2013-03-31T09:28:23+08:00 ] /SScms/install.php | NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\web\SScms\install\Lang\common.php:1) View.class.php 第 122 行.
+[ 2013-03-31T09:28:23+08:00 ] /SScms/install.php | INFO: Tag[ view_end ] --START--
+[ 2013-03-31T09:28:23+08:00 ] /SScms/install.php | INFO: Run ShowPageTrace Behavior [ RunTime:0.010736s ]
+[ 2013-03-31T09:28:23+08:00 ] /SScms/install.php | INFO: Tag[ view_end ] --END-- [ RunTime:0.010800s ]
+[ 2013-03-31T09:28:29+08:00 ] /SScms/install.php?a=setconf&m=index | INFO: Tag[ app_begin ] --START--
+[ 2013-03-31T09:28:29+08:00 ] /SScms/install.php?a=setconf&m=index | INFO: Run ReadHtmlCache Behavior [ RunTime:0.000527s ]
+[ 2013-03-31T09:28:29+08:00 ] /SScms/install.php?a=setconf&m=index | INFO: Tag[ app_begin ] --END-- [ RunTime:0.000602s ]
+[ 2013-03-31T09:28:29+08:00 ] /SScms/install.php?a=setconf&m=index | INFO: Tag[ view_template ] --START--
+[ 2013-03-31T09:28:29+08:00 ] /SScms/install.php?a=setconf&m=index | INFO: Run LocationTemplate Behavior [ RunTime:0.000796s ]
+[ 2013-03-31T09:28:29+08:00 ] /SScms/install.php?a=setconf&m=index | INFO: Tag[ view_template ] --END-- [ RunTime:0.000855s ]
+[ 2013-03-31T09:28:29+08:00 ] /SScms/install.php?a=setconf&m=index | INFO: Tag[ view_parse ] --START--
+[ 2013-03-31T09:28:29+08:00 ] /SScms/install.php?a=setconf&m=index | INFO: Run ParseTemplate Behavior [ RunTime:0.053231s ]
+[ 2013-03-31T09:28:29+08:00 ] /SScms/install.php?a=setconf&m=index | INFO: Tag[ view_parse ] --END-- [ RunTime:0.053310s ]
+[ 2013-03-31T09:28:29+08:00 ] /SScms/install.php?a=setconf&m=index | INFO: Tag[ view_filter ] --START--
+[ 2013-03-31T09:28:29+08:00 ] /SScms/install.php?a=setconf&m=index | INFO: Run ContentReplace Behavior [ RunTime:0.000629s ]
+[ 2013-03-31T09:28:29+08:00 ] /SScms/install.php?a=setconf&m=index | INFO: Run TokenBuild Behavior [ RunTime:0.000591s ]
+[ 2013-03-31T09:28:29+08:00 ] /SScms/install.php?a=setconf&m=index | INFO: Run WriteHtmlCache Behavior [ RunTime:0.000450s ]
+[ 2013-03-31T09:28:29+08:00 ] /SScms/install.php?a=setconf&m=index | INFO: Run ShowRuntime Behavior [ RunTime:0.000539s ]
+[ 2013-03-31T09:28:29+08:00 ] /SScms/install.php?a=setconf&m=index | INFO: Tag[ view_filter ] --END-- [ RunTime:0.002349s ]
+[ 2013-03-31T09:28:29+08:00 ] /SScms/install.php?a=setconf&m=index | NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\web\SScms\install\Lang\common.php:1) View.class.php 第 120 行.
+[ 2013-03-31T09:28:29+08:00 ] /SScms/install.php?a=setconf&m=index | NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\web\SScms\install\Lang\common.php:1) View.class.php 第 121 行.
+[ 2013-03-31T09:28:29+08:00 ] /SScms/install.php?a=setconf&m=index | NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\web\SScms\install\Lang\common.php:1) View.class.php 第 122 行.
+[ 2013-03-31T09:28:29+08:00 ] /SScms/install.php?a=setconf&m=index | INFO: Tag[ view_end ] --START--
+[ 2013-03-31T09:28:29+08:00 ] /SScms/install.php?a=setconf&m=index | INFO: Run ShowPageTrace Behavior [ RunTime:0.000478s ]
+[ 2013-03-31T09:28:29+08:00 ] /SScms/install.php?a=setconf&m=index | INFO: Tag[ view_end ] --END-- [ RunTime:0.000529s ]
+[ 2013-03-31T09:28:46+08:00 ] /SScms/install.php?a=install&m=index | INFO: Tag[ app_begin ] --START--
+[ 2013-03-31T09:28:46+08:00 ] /SScms/install.php?a=install&m=index | INFO: Run ReadHtmlCache Behavior [ RunTime:0.000243s ]
+[ 2013-03-31T09:28:46+08:00 ] /SScms/install.php?a=install&m=index | INFO: Tag[ app_begin ] --END-- [ RunTime:0.000319s ]
+[ 2013-03-31T09:28:46+08:00 ] /SScms/install.php?a=install&m=index | INFO: Tag[ view_template ] --START--
+[ 2013-03-31T09:28:46+08:00 ] /SScms/install.php?a=install&m=index | INFO: Run LocationTemplate Behavior [ RunTime:0.000513s ]
+[ 2013-03-31T09:28:46+08:00 ] /SScms/install.php?a=install&m=index | INFO: Tag[ view_template ] --END-- [ RunTime:0.000572s ]
+[ 2013-03-31T09:28:46+08:00 ] /SScms/install.php?a=install&m=index | INFO: Tag[ view_parse ] --START--
+[ 2013-03-31T09:28:46+08:00 ] /SScms/install.php?a=install&m=index | INFO: Run ParseTemplate Behavior [ RunTime:0.038351s ]
+[ 2013-03-31T09:28:46+08:00 ] /SScms/install.php?a=install&m=index | INFO: Tag[ view_parse ] --END-- [ RunTime:0.038430s ]
+[ 2013-03-31T09:28:46+08:00 ] /SScms/install.php?a=install&m=index | INFO: Tag[ view_filter ] --START--
+[ 2013-03-31T09:28:46+08:00 ] /SScms/install.php?a=install&m=index | INFO: Run ContentReplace Behavior [ RunTime:0.000682s ]
+[ 2013-03-31T09:28:46+08:00 ] /SScms/install.php?a=install&m=index | INFO: Run TokenBuild Behavior [ RunTime:0.000281s ]
+[ 2013-03-31T09:28:46+08:00 ] /SScms/install.php?a=install&m=index | INFO: Run WriteHtmlCache Behavior [ RunTime:0.000155s ]
+[ 2013-03-31T09:28:46+08:00 ] /SScms/install.php?a=install&m=index | INFO: Run ShowRuntime Behavior [ RunTime:0.000356s ]
+[ 2013-03-31T09:28:46+08:00 ] /SScms/install.php?a=install&m=index | INFO: Tag[ view_filter ] --END-- [ RunTime:0.001627s ]
+[ 2013-03-31T09:28:46+08:00 ] /SScms/install.php?a=install&m=index | NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\web\SScms\install\Lang\common.php:1) View.class.php 第 120 行.
+[ 2013-03-31T09:28:46+08:00 ] /SScms/install.php?a=install&m=index | NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\web\SScms\install\Lang\common.php:1) View.class.php 第 121 行.
+[ 2013-03-31T09:28:46+08:00 ] /SScms/install.php?a=install&m=index | NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\web\SScms\install\Lang\common.php:1) View.class.php 第 122 行.
+[ 2013-03-31T09:28:46+08:00 ] /SScms/install.php?a=install&m=index | INFO: Tag[ view_end ] --START--
+[ 2013-03-31T09:28:46+08:00 ] /SScms/install.php?a=install&m=index | INFO: Run ShowPageTrace Behavior [ RunTime:0.000185s ]
+[ 2013-03-31T09:28:46+08:00 ] /SScms/install.php?a=install&m=index | INFO: Tag[ view_end ] --END-- [ RunTime:0.000236s ]
+[ 2013-03-31T09:28:46+08:00 ] /SScms/install.php?a=finish_done&m=index | INFO: Tag[ app_begin ] --START--
+[ 2013-03-31T09:28:46+08:00 ] /SScms/install.php?a=finish_done&m=index | INFO: Run ReadHtmlCache Behavior [ RunTime:0.000261s ]
+[ 2013-03-31T09:28:46+08:00 ] /SScms/install.php?a=finish_done&m=index | INFO: Tag[ app_begin ] --END-- [ RunTime:0.000344s ]
+[ 2013-03-31T09:28:46+08:00 ] /SScms/install.php?a=finish_done&m=index | NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\web\SScms\install\Lang\common.php:1) indexAction.class.php 第 177 行.
+[ 2013-03-31T09:28:46+08:00 ] /SScms/install.php?a=finish_done&m=index | NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. indexAction.class.php 第 249 行.
+[ 2013-03-31T09:28:46+08:00 ] /SScms/install.php?a=finish_done&m=index | NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. indexAction.class.php 第 249 行.
+[ 2013-03-31T09:28:46+08:00 ] /SScms/install.php?a=finish_done&m=index | NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. indexAction.class.php 第 249 行.
+[ 2013-03-31T09:28:46+08:00 ] /SScms/install.php?a=finish_done&m=index | NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. indexAction.class.php 第 249 行.
+[ 2013-03-31T09:28:46+08:00 ] /SScms/install.php?a=finish_done&m=index | NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. indexAction.class.php 第 249 行.
+[ 2013-03-31T09:28:46+08:00 ] /SScms/install.php?a=finish_done&m=index | NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. indexAction.class.php 第 249 行.
+[ 2013-03-31T09:28:46+08:00 ] /SScms/install.php?a=finish_done&m=index | NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. indexAction.class.php 第 249 行.
+[ 2013-03-31T09:28:46+08:00 ] /SScms/install.php?a=finish_done&m=index | NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. indexAction.class.php 第 249 行.
+[ 2013-03-31T09:28:46+08:00 ] /SScms/install.php?a=finish_done&m=index | NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. indexAction.class.php 第 249 行.
+[ 2013-03-31T09:28:46+08:00 ] /SScms/install.php?a=finish_done&m=index | NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. indexAction.class.php 第 249 行.
+[ 2013-03-31T09:28:46+08:00 ] /SScms/install.php?a=finish_done&m=index | NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. indexAction.class.php 第 249 行.
+[ 2013-03-31T09:28:46+08:00 ] /SScms/install.php?a=finish_done&m=index | NOTIC: [8] ob_flush() [<a href='ref.outcontrol'>ref.outcontrol</a>]: failed to flush buffer. No buffer to flush. indexAction.class.php 第 249 行.
+[ 2013-03-31T09:28:48+08:00 ] /SScms/install.php?a=finish&m=index | INFO: Tag[ app_begin ] --START--
+[ 2013-03-31T09:28:48+08:00 ] /SScms/install.php?a=finish&m=index | INFO: Run ReadHtmlCache Behavior [ RunTime:0.000236s ]
+[ 2013-03-31T09:28:48+08:00 ] /SScms/install.php?a=finish&m=index | INFO: Tag[ app_begin ] --END-- [ RunTime:0.000312s ]
+[ 2013-03-31T09:28:48+08:00 ] /SScms/install.php?a=finish&m=index | INFO: Tag[ view_template ] --START--
+[ 2013-03-31T09:28:48+08:00 ] /SScms/install.php?a=finish&m=index | INFO: Run LocationTemplate Behavior [ RunTime:0.000604s ]
+[ 2013-03-31T09:28:48+08:00 ] /SScms/install.php?a=finish&m=index | INFO: Tag[ view_template ] --END-- [ RunTime:0.000671s ]
+[ 2013-03-31T09:28:48+08:00 ] /SScms/install.php?a=finish&m=index | INFO: Tag[ view_parse ] --START--
+[ 2013-03-31T09:28:48+08:00 ] /SScms/install.php?a=finish&m=index | INFO: Run ParseTemplate Behavior [ RunTime:0.034577s ]
+[ 2013-03-31T09:28:48+08:00 ] /SScms/install.php?a=finish&m=index | INFO: Tag[ view_parse ] --END-- [ RunTime:0.034659s ]
+[ 2013-03-31T09:28:48+08:00 ] /SScms/install.php?a=finish&m=index | INFO: Tag[ view_filter ] --START--
+[ 2013-03-31T09:28:48+08:00 ] /SScms/install.php?a=finish&m=index | INFO: Run ContentReplace Behavior [ RunTime:0.000318s ]
+[ 2013-03-31T09:28:48+08:00 ] /SScms/install.php?a=finish&m=index | INFO: Run TokenBuild Behavior [ RunTime:0.000229s ]
+[ 2013-03-31T09:28:48+08:00 ] /SScms/install.php?a=finish&m=index | INFO: Run WriteHtmlCache Behavior [ RunTime:0.000153s ]
+[ 2013-03-31T09:28:48+08:00 ] /SScms/install.php?a=finish&m=index | INFO: Run ShowRuntime Behavior [ RunTime:0.000311s ]
+[ 2013-03-31T09:28:48+08:00 ] /SScms/install.php?a=finish&m=index | INFO: Tag[ view_filter ] --END-- [ RunTime:0.001154s ]
+[ 2013-03-31T09:28:48+08:00 ] /SScms/install.php?a=finish&m=index | NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\web\SScms\install\Lang\common.php:1) View.class.php 第 120 行.
+[ 2013-03-31T09:28:48+08:00 ] /SScms/install.php?a=finish&m=index | NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\web\SScms\install\Lang\common.php:1) View.class.php 第 121 行.
+[ 2013-03-31T09:28:48+08:00 ] /SScms/install.php?a=finish&m=index | NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\web\SScms\install\Lang\common.php:1) View.class.php 第 122 行.
+[ 2013-03-31T09:28:48+08:00 ] /SScms/install.php?a=finish&m=index | INFO: Tag[ view_end ] --START--
+[ 2013-03-31T09:28:48+08:00 ] /SScms/install.php?a=finish&m=index | INFO: Run ShowPageTrace Behavior [ RunTime:0.000190s ]
+[ 2013-03-31T09:28:48+08:00 ] /SScms/install.php?a=finish&m=index | INFO: Tag[ view_end ] --END-- [ RunTime:0.000241s ]

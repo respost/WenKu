@@ -1,0 +1,299 @@
+<include file="public:head"/>
+<script src="__PUBLIC__/js/flexpaper/flexpaper.js"></script>
+<script src="__PUBLIC__/js/flexpaper/flexpaper_handlers.js"></script>
+<script src="__PUBLIC__/js/jquery.media.js"></script>
+<div class="menu"><a href="{:U('index/index')}">文库首页</a><em class="bgcur"></em>{:getnavlist($info['cateid'])}</div>
+<div class="conbox">
+    <div class="conleft">
+        <div class="contitle">
+            <div class="icon {$info.ext}"></div>
+            <div class="titlename">{$info.title}</div>
+            <div class="titleinfo">{$info.hits}人阅读</div>
+        </div>
+
+        <div class="coninfo">
+            <p>{$info.intro}</p>
+        </div>
+        <div class="conflash" style="position:relative;">
+            <!--
+            <div class="flashtop">
+                <a href="javascript:void(0);"
+                <if condition="$hasxh neq 1">data-uri="{:U('common/operate',array('id'=>$info['id'],'typeid'=>1))}"
+                    <else/>
+                    data-uri=""
+                </if>
+                onclick="front_operate(2,this);">
+                <b class="tjicon"></b>
+                收藏
+                </a>
+                <a href="javascript:void(0);"
+                <if condition="$hastj neq 1">data-uri="{:U('common/operate',array('id'=>$info['id'],'typeid'=>1))}"
+                    <else/>
+                    data-uri=""
+                </if>
+                onclick="front_operate(3,this);">
+                <b class="xhicon"></b>
+                推荐</a>
+            </div>			
+            <div class="flashmid">	
+                <div id="documentViewer" style="width:100%;height:100%;">
+                    <if condition="($uid lt 1) OR ($uid eq null)">
+                        <div id="focusad" style="width:{$adinfo.width}px;height:{$adinfo.height}px">
+                            {:R('advert/index', array(1), 'Widget')}
+                        </div>
+                        <else/>
+                        <script>$(function () {
+                            //显示swf动画
+                            askflash();
+                        });
+                        </script>
+                    </if>
+                </div>
+            </div>         
+            -->
+            <img id="imgBox" src="{$imgurl}" width="100%" height="100%" style="display:none;"/>
+            <object id="pdfBox" classid="clsid:CA8A9780-280D-11CF-A24D-444553540000" width="100%" height="100%"
+                    border="0"><!--IE-->
+                <param name="_Version" value="65539">
+                <param name="_ExtentX" value="20108">
+                <param name="_ExtentY" value="10866">
+                <param name="_StockProps" value="0">
+                <param name="SRC" value="{$flashurl}">
+                <embed src="{$flashurl}" width="100%" height="100%" href="{$flashurl}"></embed><!--FF-->
+            </object>
+			<!---广告插件-->
+			<div id="documentViewer" style="width:100%;height:100%;position:absolute;top:30px;">
+			<if condition="($uid lt 1) OR ($uid eq null)">
+                <div id="focusad" style="width:{$adinfo.width}px;height:{$adinfo.height}px;">
+                            {:R('advert/index', array(1), 'Widget')}
+                </div>
+            <else/>
+            </if>
+			</div>
+        </div>
+        <div class="doctool">
+            <a href="javascript:void(0);" class="viewbtn scbtn"
+            <if condition="$hasxh neq 1">data-uri="{:U('common/operate',array('id'=>$info['id'],'typeid'=>1))}"
+                <else/>
+                data-uri=""
+            </if>
+            onclick="front_operate(2,this);">
+            </a>
+            <div class="desinfo">
+                <p style="color:#2E946A;line-height:36px;">免费</p>
+            </div>
+            <a href="javascript:void(0);" class="J_shownoform viewbtn downbtn" data-fix="true" data-padding="30px"
+               data-uid="{$uid}" data-uri="{:U('doc/showdownload','id='.$info['id'])}" data-title="文档下载"
+               data-id="showdownload" data-width="400" data-height="250">
+            </a>
+            <div class="desinfo">
+                <p style="line-height:18px;">大小:{$info.filesize|byte_format}</p>
+                <p style="line-height:18px;">所需财富值:{$info.score}</p>
+            </div>
+
+        </div>
+    </div>
+    <div class="conright">
+        <div class="docupload">
+            <a href="{:U('doc/doc_share')}" class="viewbtn docupbtn"></a>
+
+        </div>
+
+        <div class="docinfotitle" style="border:0">文档信息</div>
+
+        <div class="docinfo">
+            <p><a href="{:U('member/mydoclist',array('uid'=>$info['uid']))}">{$info['uid']|getusername}</a>贡献于{$info.add_time|fdate}
+            </p>
+            <div class="rate">
+                <div class="big_rate">
+                    <span rate="2">&nbsp;</span>
+                    <span rate="4">&nbsp;</span>
+                    <span rate="6">&nbsp;</span>
+                    <span rate="8">&nbsp;</span>
+                    <span rate="10">&nbsp;</span>
+                    <div style="width:45px;" class="big_rate_up"></div>
+                </div>
+                <p><span id="s" class="s"></span><span id="g" class="g"></span></p>
+            </div>
+            <p>(
+                <if condition="$ratydata['voter'] eq null">0</if>
+                {$ratydata['voter']}人评分)
+            </p>
+
+            <p>下载：<s>{$downnum}</s><em>|</em>收藏：<s>{$xhnum}</s><em>|</em>推荐：<s>{$tuijiannum}</s></p>
+
+            <p>({$commentcount}人评论)&nbsp;&nbsp;<a href="{:U('doc/docconcom',array('id'=>$info['id']))}">查看所有评论</a></p>
+            <p><a href="javascript:void(0)" class="J_shownoform userEva-btn2 mycomment-btn" data-fix="true"
+                  data-padding="30px" data-uid="{$uid}" data-uri="{:U('doc/comment','id='.$info['id'])}"
+                  data-title="我要评论" data-id="mycomment" data-width="400" data-height="250">
+                <b class="userEva-btn2 iccomment"></b>我要评论</a></p>
+        </div>
+        <div class="docinfotitle">同类别文档</div>
+        <div class="docinfo">
+            <ul>
+                <mtceo:doc type="lists" cateid="$info['cateid']" exceptid="$info['id']" how="rate"
+                           order="add_time desc">
+                    <volist name="data['list']" id="vo" offset="0" length="6">
+                        <li><a href="{:U('doc/doccon',array('id'=>$vo['id']))}">{$vo.title|msubstr=###,0,14}</a></li>
+                    </volist>
+                </mtceo:doc>
+            </ul>
+        </div>
+        <div class="docinfotitle">相关文档</div>
+        <div class="docinfo">
+            <ul>
+                <mtceo:doc type="lists" similar="$info['id']" exceptid="$info['id']" how="rate" order="add_time desc">
+                    <volist name="data['list']" id="vo" offset="0" length="6">
+                        <li><a href="{:U('doc/doccon',array('id'=>$vo['id']))}">{$vo.title|msubstr=###,0,14}</a></li>
+                    </volist>
+                </mtceo:doc>
+
+            </ul>
+        </div>
+        <div class="conad1">
+        </div>
+    </div>
+
+    <div class="clear"></div>
+</div>
+<script type="text/javascript">
+    $(function ($) {
+        //判断是不是IE浏览器
+        if (window.ActiveXObject || "ActiveXObject" in window) {
+			$("#pdfBox").hide();
+			$("#imgBox").show();
+			$.alert("对不起，IE浏览器不支持在线预览PDF文档，请更换其他浏览器！");			
+        }
+        //隐藏PDF文件工具栏
+        //pdfBox.SetShowToolbar(false);
+        //pdfBox.setShowScrollbars(true);
+    });
+    //禁止右键和F12调试
+    $(document).bind("contextmenu", function () {
+        return false;
+    });
+    document.oncontextmenu = function () {
+        return false;
+    };
+    document.onkeydown = function () {
+        if (window.event && window.event.keyCode == 123) {
+            event.keyCode = 0;
+            event.returnValue = false;
+            return false;
+        }
+    }
+</script>
+<script type="text/javascript">
+    function askflash() {
+        var flashurl = "{$flashurl}";
+        $('#documentViewer').FlexPaperViewer(
+            {
+                config: {
+                    SWFFile: flashurl,
+                    Scale: 0.6,
+                    ZoomTransition: 'easeOut',
+                    ZoomTime: 0.5,
+                    ZoomInterval: 0.2,
+                    FitPageOnLoad: false,
+                    FitWidthOnLoad: true,
+                    FullScreenAsMaxWindow: true,
+                    ProgressiveLoading: false,
+                    MinZoomSize: 0.2,
+                    MaxZoomSize: 5,
+                    SearchMatchAll: false,
+                    InitViewMode: 'Portrait',
+                    RenderingOrder: 'flash',
+                    StartAtPage: '',
+                    ViewModeToolsVisible: true,
+                    ZoomToolsVisible: true,
+                    NavToolsVisible: true,
+                    CursorToolsVisible: true,
+                    SearchToolsVisible: true,
+                    WMode: 'opaque',
+                    localeChain: 'zh_cn'
+                }
+            }
+        );
+    }
+
+    $(function () {
+        $('#nextpage').click(function () {
+            $FlexPaper('documentViewer').nextPage();
+        });
+        $('#prepage').click(function () {
+            $FlexPaper('documentViewer').prevPage();
+        });
+        var rate = "{$raty['raty']}";
+        var s = "{$raty['s']}";
+        var g = "{$raty['g']}";
+        $("#g").show();
+        $("#s").text(s);
+        $("#g").text("." + g);
+        $(".big_rate_up").animate({width: (parseInt(s) + parseInt(g) / 10) * 14, height: 26}, 1000);
+        $(".big_rate span").each(function () {
+            $(this).mouseover(function () {
+                $(".big_rate_up").width($(this).attr("rate") * 14);
+                $("#s").text($(this).attr("rate"));
+                $("#g").text("");
+            }).click(function () {
+                var score = $(this).attr("rate");
+                //
+                $.getJSON("{:U('doc/setscore',array('id'=>$info['id'],'uid'=>$uid))}",
+                    {score: score},
+                    function (data) {
+                        if (data.status == 0) {
+                            $.mtceo.tip({content: data.msg, icon: 'error'});
+                        } else if (data.status == 1) {
+                            s = data.msg.s;
+                            g = data.msg.g;
+                            $("#s").text(s);
+                            $("#g").text("." + g);
+                            $("#ratycount").text(data.msg.count);
+                            $.mtceo.tip({content: "感谢您的评分!"});
+                            setTimeout(function () {
+                                window.location.reload();
+                            }, 1000);
+                        }
+                    }
+                );
+            })
+        });
+        $(".big_rate").mouseout(function () {
+            $("#s").text(s);
+            $("#g").text("." + g);
+            $(".big_rate_up").width((parseInt(s) + parseInt(g) / 10) * 14);
+        });
+    });
+</script>
+
+<script defer="defer">
+    $(window).keydown(function (event) {
+        if (event.keyCode == 13) {
+            var curr = $(this).val();
+            if (parseInt(curr) == 'NaN') {
+                $.mtceo.tip({content: "请输入有效整数!", icon: 'alert'});
+            }
+            if (parseInt(curr) > 32700 || parseInt(curr) < 0) {
+                $.mtceo.tip({content: "超出范围!", icon: 'error'});
+            } else {
+                $FlexPaper('documentViewer').gotoPage(curr);
+            }
+        }
+    });
+</script>
+<script src="__PUBLIC__/js/kindeditor/kindeditor.js"></script>
+<script>
+    $(function () {
+        KindEditor.create('#info', {
+            themeType: 'simple',
+            uploadJson: '{:U("attachment/editer_upload")}',
+            fileManagerJson: '{:U("attachment/editer_manager")}',
+            allowFileManager: true,
+            items: ['emoticons'],
+            emotPath: './public/images/emot/{$emot}/',
+            emotwidth: '{$emotwidth}',
+            emotnum: '{$emotnum}',
+        });
+    });
+</script>
+<include file="public:footer"/>

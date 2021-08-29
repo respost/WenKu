@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>{$seoconfig.title}</title>
+		<meta content="{$seoconfig.description}" name="description">
+		<meta content="{$seoconfig.keywords}" name="keywords">
+		<script>
+			var URL = '__URL__';
+			var SELF = '__SELF__';
+			var ROOT_PATH = '__ROOT__';
+			var APP = '__APP__';
+			//语言项目
+			var lang = new Object(); 
+			<volist name = ":L('js_lang')" id = "val" >
+				lang.{$key} = "{$val}"; 
+			</volist>
+		</script>
+		<link href="__PUBLIC__/theme/baidu/css/base.css" rel="stylesheet" media="screen" />
+		<link href="__PUBLIC__/theme/baidu/css/mtceodialogtip.css" rel="stylesheet" media="screen" />
+		<script src="__PUBLIC__/js/jquery-1.8.3.js"></script>
+		<script src="__PUBLIC__/js/jquery.tools.min.js"></script>
+		<script src="__PUBLIC__/js/mtceo.js"></script>
+		<script src="__PUBLIC__/js/home.js"></script>
+		<script src="__PUBLIC__/js/home_extend.js"></script>
+		<script src="__PUBLIC__/js/jquery.form.js"></script>
+		<script src="__PUBLIC__/js/jquery.flash.js"></script>
+		<script src="__PUBLIC__/js/ad_top.js"></script>
+		<!--引入jquery-weui框架-->
+		<link rel="stylesheet" href="__PUBLIC__/weui/css/weui.min.css">
+		<script src="__PUBLIC__/weui/js/jquery-weui.min.js" charset="utf-8"></script>
+	</head>
+	<body>
+		<if condition="$cssnum eq 1">
+		<!--顶部折叠广告位-->
+		<div class='top-adver'>
+			{:R('advert/index', array(2), 'Widget')}
+		</div>
+		</if>
+		<div class="headnav">
+			<div class="clear"></div>
+		</div>
+		<div class="top">
+				<div class="logo fl">
+					<a href="{:C('mtceo_site_url')}"></a>
+				</div>
+				<div class="top-search-box">
+				<form action="{:U('search/index')}" method="get">
+					 <span class="s_ipt_wr">
+						<input type="text" id="kw" name="searchword" maxlength="256" <if condition="$searchword neq null">class="s_ipt" value="{$searchword}"<else /> class="s_ipt placeholder"   placeholder="请输入要搜索的文档"</if> />
+					 </span>
+					 <span class="s_btn_wr"> 
+						<input id="sb" value="搜索" class="searchbtn" type="submit">
+					 </span>
+					<span class="s_tools"> </span>
+					<div class="g-sl" alog-group="switch.doctype"> <label for="t_all">
+						<input name="lm" value="0" id="t_all" <if condition="$search.lm eq 0">checked=""</if> type="radio">全部</label>
+						<label for="t_doc"><input name="lm" value="1" id="t_doc" <if condition="$search.lm eq 1">checked=""</if> type="radio">DOC</label>
+						<label for="t_ppt"><input name="lm" value="3" id="t_ppt" <if condition="$search.lm eq 3">checked=""</if> type="radio">PPT</label>
+						<label for="t_txt"><input name="lm" value="5" id="t_txt" <if condition="$search.lm eq 5">checked=""</if> type="radio">TXT</label>
+						<label for="t_pdf"><input name="lm" value="2" id="t_pdf" <if condition="$search.lm eq 2">checked=""</if> type="radio">PDF</label>
+						<label for="t_xls"><input name="lm" value="4" id="t_xls" <if condition="$search.lm eq 4">checked=""</if> type="radio">XLS</label>
+						<div style="clear:both"></div>
+					</div>
+				</form>
+				</div>
+				<div class="userinfo">
+					<ul>
+						<if condition="$visitor['uid'] eq ''">
+							<li>
+								<a href="{:U('user/login')}">登录</a>&nbsp;&nbsp;
+								<a href="{:U('user/register')}">注册</a>
+							</li>
+							
+						</if>
+						<if condition="$visitor['uid'] gt 0">					
+						<a href="{:U('ucenter/index')}"><li>账号：{$visitor['username']}</li></a>
+						<a href="{:U('user/logout')}"><li class="red">安全退出</li></a>
+						</if>
+					<ul>
+				</div>
+		</div>
+		<if condition="$cssnum eq 1">
+			<div class="nav">
+				<ul>
+					<li <if condition="$modulename eq 'index'"> class="cur"</if>>
+					<a href="{:U('index/index')}">文库首页</a>
+					</li>
+					<li id="allcate" <if condition="$actionname eq 'doccate'"> class="cur"</if>>
+						<a href="{:U('doc/doccate')}">全部分类</a><b class="d-ic disnone"></b>
+					</li>
+					<volist name="navlist['main']" id="vo">
+						<li>
+							<a href="{$vo.link}" alt="{$vo.alias}" <if condition="$vo['target'] eq 1"> target="_blank"</if>>{$vo.name}</a>
+						</li>
+					</volist>
+					<li <if condition="$modulename eq 'ucenter'"> class="cur"</if>>
+						<a href="{:U('ucenter/index')}">个人中心</a>
+					</li>
+				</ul>
+				
+			</div>
+			<!--导航下方横幅广告位-->
+			<div style="width:960px;margin:0 auto;margin-bottom:10px;">
+				{:R('advert/index', array(3), 'Widget')}
+			</div>
+		</if>
+		<div class="container{$cssnum}">

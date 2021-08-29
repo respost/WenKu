@@ -1,0 +1,94 @@
+<include file="public:head" />
+<include file="ucenter:ucleft" />
+<div class="ucright">
+<div class="menuname">
+<ul><li class="cur"><a href="#">我的消息</a></li>
+
+</ul>
+
+
+<b><s></s></b>
+
+</div>
+<div class="submenu">
+<ul>
+<li><a href="{:U('ucenter/usermail')}" class="cur">消息列表</a></li>
+
+</ul>
+
+
+
+
+</div>
+
+<div class="userlist">
+
+<volist name="data" id="vo">
+
+<if condition="$vo.fromid eq $uid">
+<div class="my-mail-content">
+<b><s></s></b>
+<div class="mymailbox">
+<p class="mail-content"><a href="#">我</a>:{$vo.info}</p>
+<p>{$vo.add_time|fdate}</p>
+</div>
+<div class="mymail-img"><img src="{:avatar($uid,'48')}" /></div>
+</div>
+
+
+<else />
+
+<div class="other-mail-content">
+<b><s></s></b>
+<div class="othermail-img"><img src="{:avatar($vo.fromid,'48')}"  /></div>
+
+<div class="othermailbox">
+<p class="mail-content">
+
+<if condition="$vo.fromid eq 0">
+系统消息
+<else />
+<a href="#">{$vo.fromid|getusername}</a>
+</if>
+:{$vo.info}</p>
+
+<p>{$vo.add_time|fdate}</p>
+</div>
+</div>
+</if>
+
+
+</volist>
+
+
+
+
+</div>
+<if condition="$vo.fromid neq 0">
+<div class="mess-div">
+
+ 
+ 
+ <input type="button" class="wk-btn2 g-n-btns J_showdialog" 
+ data-uri="{:U('ucenter/mail_send',array('uid'=>$toid,'reid'=>$data1['id']))}" 
+ data-title="发信给{$data1.fromid|getusername}" data-id="add" value="{:L('re_mail')}"/>
+
+</div>
+
+<div class="page-nav page-center"> 
+<div class="page-inner"> 
+<div class="page-content">
+{$page}
+</div> </div></div>
+</if>
+
+
+
+
+</div>
+
+<div class="clear">
+
+</div>
+
+<include file="public:footer" />

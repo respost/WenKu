@@ -1,0 +1,64 @@
+<include file="public:header" />
+<!--积分设置-->
+<div class="pad_lr_10">
+<form id="info_form" action="{:U('score/setting')}" method="post">
+    <table width="100%" cellspacing="0" class="table_form">
+        <thead>
+        <tr>
+            <th width="150" align="left">用户行为</th>
+            <th width="150" align="left">积分</th>
+            <th align="left">每日奖惩上限次数</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>注册 :</td>
+            <td><input type="text" name="score_rule[register]" class="input-text" size="10" value="{:C('mtceo_score_rule.register')}"></td>
+            <td>
+                {:C('mtceo_score_rule.register_nums')}
+                <input type="text" name="score_rule[register_nums]" class="input-text" size="10" value="{:C('mtceo_score_rule.register_nums')}" style="display:none;">
+            </td>
+        </tr>
+        <tr>
+            <td>登录 :</td>
+            <td><input type="text" name="score_rule[login]" class="input-text" size="10" value="{:C('mtceo_score_rule.login')}"></td>
+            <td><input type="text" name="score_rule[login_nums]" class="input-text" size="10" value="{:C('mtceo_score_rule.login_nums')}"></td>
+        </tr>
+        <tr>
+            <td>文档被下载 :</td>
+            <td><input type="text" name="score_rule[docdown]" class="input-text" size="10" value="{:C('mtceo_score_rule.docdown')}"></td>
+            <td>个人文档被下载一次系统自动奖励的积分</td>
+        </tr>
+        <tr>
+            <td>文档积分返还比例 :</td>
+            <td><input type="text" name="score_rule[docscore]" class="input-text" size="10" value="{:C('mtceo_score_rule.docscore')}">%</td>
+            <td>用户下载文档花费积分返还给文档上传者的比例</td>
+        </tr>
+        <tr>
+            <td>文档上传奖励 :</td>
+            <td><input type="text" name="score_rule[docup]" class="input-text" size="10" value="{:C('mtceo_score_rule.docup')}"></td>
+            <td></td>
+        </tr>
+         <tr>
+            <td>文档被删除惩罚 :</td>
+            <td><input type="text" name="score_rule[docdel]" class="input-text" size="10" value="{:C('mtceo_score_rule.docdel')}"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="3"><input type="submit" value="{:L('submit')}" id="dosubmit" name="dosubmit" class="btn btn_submit" /></td>
+        </tr>
+    </tbody>
+    </table>
+</form>
+</div>
+<include file="public:footer" />
+<script>
+$('#score_setting').find('input').live('keyup keydown blur',function(){
+    var self = $(this);
+    var val = self.val();
+    val = val.replace(/[^0-9]/g,'');
+    self.val(val);
+});
+</script>
+</body>
+</html>

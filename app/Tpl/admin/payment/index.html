@@ -1,0 +1,56 @@
+<include file="public:header" />
+<!--接口列表-->
+<div class="pad_10">
+    <div class="J_tablelist table_list" data-acturi="{:U('payment/ajax_edit')}">
+        <table width="100%" cellspacing="0">
+            <thead>
+            <tr>
+                <th>ID</th>
+      			<th>名称</th>
+                <th>标识</th>
+                <th width="100">图标</th>
+               
+                <th>商户</th>
+                <th>商户号</th>
+                <th><span data-tdtype="order_by" data-field="ordid">排序</span></th>
+                <th>状态</th>
+                <th width="100">{:L('operations_manage')}</th>
+            </tr>
+            </thead>
+            
+            <tbody>
+            <volist name="list" id="val">
+           
+            <tr>
+                <td align="center">{$val.id}</td>
+                <td align="center">{$val.name}</td>
+                <td align="center">{$val.mark}</td>
+                <td align="center">
+                <notempty name="val.logo">
+				<span class="attachment_icon J_attachment_icon" file-type="image" file-rel="{:attach($val['logo'], 'payment')}">
+				<img src="{:attach($val['logo'], 'payment')}" style="width:26px; height:26px;" /></span>
+                </notempty>
+				</td>
+               
+               
+                <td align="center">{$val.merchant }</td>
+                 <td align="center">{$val.account}</td>
+                 <td align="center"><span data-tdtype="edit" data-field="ordid" data-id="{$val.id}" class="tdedit">{$val.ordid}</span></td>
+                <td align="center">
+                    <img data-tdtype="toggle" data-field="status" data-id="{$val.id}" data-value="{$val.status}" src="__PUBLIC__/images/admin/toggle_<if condition="$val.status eq 0">disabled<else/>enabled</if>.gif" />
+                </td>
+                <td align="center">
+                    <a href="javascript:;" class="J_showdialog" data-uri="{:U('payment/edit', array('id'=>$val['id']))}" data-title="{:L('edit')} - {$val.name}"  data-id="edit">{:L('edit')}</a>
+             </td>
+            </tr>
+            </volist>
+            </tbody>
+        </table>
+    </div>
+    <div class="btn_wrap_fixed">
+        <div id="pages">{$page}</div>
+    </div>
+</div>
+<include file="public:footer" />
+</body>
+</html>

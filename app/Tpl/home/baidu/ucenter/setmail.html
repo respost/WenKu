@@ -1,0 +1,90 @@
+<include file="public:head" />
+<include file="ucenter:ucleft" />
+
+<div class="ucright">
+<div class="menuname">
+<ul><li class="cur"><a href="#">个人中心</a></li>
+
+</ul>
+
+
+<b><s></s></b>
+
+</div>
+<div class="submenu">
+<ul>
+<li><a href="{:U('ucenter/index')}">个人资料</a></li>
+<li><a href="{:U('ucenter/setavatar')}">头像修改</a></li>
+<li><a href="{:U('ucenter/setpassword')}">密码安全</a></li>
+<li><a href="{:U('ucenter/setmail')}" class="cur">邮箱绑定</a></li>
+</ul>
+
+
+
+
+</div>
+<div class="setinfo">
+<form id="info_form" action="{:U('ucenter/yzmail')}" method="post">
+<table width="100%" border="0">
+<input type="hidden" id="bind" name="bind" class="ins" value="{$bind}" />
+<input type="hidden" id="yzsn" name="yzsn" class="ins" value="{$yzsn}" />
+  <tr>
+    <td width="80" align="right">邮箱：</td>
+    <td><input type="text" id="email" name="email" class="ins" value="{$info.email}" />&nbsp;&nbsp;<font color=orange>填写邮箱而后验证</font></td>
+    <td><font color=red>验证邮件的有效期为60秒</font></td>
+  </tr>
+  
+    <tr>
+    <td align="right"></td>
+   <td> <input type="submit" id="yanzheng" class="wk-btn2 g-n-btns" value="验证邮箱" />&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" id="changemail" class="wk-btn2 g-n-canbtns" value="修改邮箱" /></td>
+    <td>&nbsp;</td>
+  </tr>
+ 
+</table>
+	</form>
+
+</div>
+</div>
+
+<div class="clear">
+
+</div>
+
+<script>
+
+$(function(){
+
+if($('#bind').val()>0){
+
+$('#email').attr('disabled','disabled');
+$('#yanzheng').attr('disabled','disabled');
+}
+
+$('#changemail').click(function(){
+
+
+	$('#email').removeAttr('disabled');
+	$('#yanzheng').removeAttr('disabled');
+	
+});
+
+	
+$('#info_form').ajaxForm({success:complate,dataType:'json'});
+	
+	function complate(result){
+
+		
+		if(result.status == 1){
+			
+			
+            $.mtceo.tip({content:result.msg});
+           // window.location.reload();
+            
+		} else {
+			$.mtceo.tip({content:result.msg, icon:'alert'});
+		}
+	}
+	
+});
+</script>
+<include file="public:footer" />

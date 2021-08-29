@@ -1,0 +1,251 @@
+<include file="public:head"/>
+<script src="__PUBLIC__/js/count/jQuery.artTxtCount.js"></script>
+
+<div class="cleft">
+    <div class="setinfo">
+        <div class="red_orange">填写文档信息</div>
+        <form id="info_form" action="{:U('doc/doc_share',array('type'=>'edit'))}" method="post"
+              onsubmit="return formcheck();">
+            <table width="100%" border="0">
+                <tr>
+                    <td align="right"><s>*</s>文档：</td>
+                    <td><input style="margin-bottom:2px;" type="text" name="fileurl1" class="w300" id="fileurl1"
+                               disabled="disabled" size="30" value="{$info.fileurl}">
+                        <input type="hidden" name="fileurl" id="fileurl" size="30" value="{$info.fileurl}">
+                        <input type="hidden" name="ext" id="ext" size="30" value="{$info.ext}">
+                        <input type="hidden" name="filesize" id="filesize" size="30" value="{$info.filesize}">
+                        <input type="hidden" name="oldname" id="oldname" size="30" value="{$info.oldname}">
+                        <button class="wk-btn2 minibtns" id="J_upload_file">上传</button>
+                    </td>
+                    <td>支持office、wps等类型文档上传</td>
+                </tr>
+
+                <tr>
+                    <td width="80" align="right"><s>*</s>标题：</td>
+                    <td><input type="text" name="title" id="title" class="w300" value="{$info.title}"/></td>
+                    <td id="titleTip">控制在50个字符以内</td>
+                </tr>
+                <tr>
+                    <td width="80" align="right"><s>*</s>选择分类：</td>
+                    <td><input type="hidden" name="cateid" id="J_cate_id" value="{$info.cateid}"/>
+                        <select class="J_cate_select iselect ins" data-pid="0" data-uri="{:U('doc_cate/ajax_getsubcate')}"
+                                data-selected="{$info.spid}">
+
+                        </select></td>
+                    <td id="J_cate_idTip">&nbsp;</td>
+                </tr>
+				<tr>
+                    <td width="80" align="right"><s>*</s>售价：</td>
+                    <td><input type="text" name="score" id="score" style="width:143px;height: 24px;line-height: 24px;padding-left: 5px;" value="{$info.score}"/></td>
+                    <td>售价必须为数字且只能为整数</td>
+                </tr>
+                <tr>
+                    <td align="right">文档简介：</td>
+                    <td><textarea name="intro" id="intro" style="width:350px;height:100px;"
+                                  class="txt">{$info.intro}</textarea></td>
+                    <td id="intro_tips">控制在255个字符以内</td>
+                </tr>
+                <tr>
+                    <td width="80" align="right">标签：</td>
+                    <td><input type="text" name="tags" id="tags" class="w300" value="{$info.tags}"/>
+						<!--&nbsp;&nbsp;
+                        <input type="button" value="自动获取" id="J_gettags" name="tags_btn" class="wk-btn2 minibtns">
+						-->
+					</td>
+                    <td>标签请用半角逗号,隔开</td>
+                </tr>
+
+                <php>if(C('mtceo_web_model')==1){</php>
+
+                <tr>
+                    <td align="right">封面：</td>
+                    <td><input style="margin-bottom:2px;width:350px;" type="text" name="imgurl1" class="w300"
+                               id="imgurl1" disabled="disabled" size="30" value="{$info.imgurl}">
+                        <input type="hidden" name="imgurl" id="imgurl" size="30" value="{$info.imgurl}">
+                        <button class="wk-btn2 minibtns" id="J_upload_img">上传</button>
+                    </td>
+                    <td>好的封面能大大增加文档的吸引力</td>
+                </tr>
+                <tr>
+                    <td align="right">PDF文件：</td>
+                    <td><input style="margin-bottom:2px;width:350px;" type="text" name="viewurl1" class="w300"
+                               id="viewurl1" disabled="disabled" size="30" value="{$info.viewurl}">						   
+                        <!--<input type="hidden" name="viewurl" id="viewurl" size="30" value="{$info.viewurl}">
+                        <input type="hidden" name="filesize" id="filesize" size="30" value="{$info.filesize}">
+                        <button class="wk-btn2 minibtns" id="J_upload_img1">上传</button>-->
+					</td>
+                    <td>预览显示</td>
+                </tr>
+
+                <php>}</php>
+
+
+                <tr>
+                    <td align="right"></td>
+
+
+                    <input type="hidden" name="id" value="{$info.id}"/>
+
+                    <td>
+						<input type="submit" class="wk-btn2 g-n-btns" value="修改文档"/>
+						<a class="backbtn" href="javascript:history.go(-1)">返回</a>
+					</td>
+                    <td>&nbsp;</td>
+                </tr>
+
+            </table>
+        </form>
+
+    </div>
+</div>
+<div class="clear"></div>
+<script src="__PUBLIC__/js/count/jQuery.artTxtCount.js"></script>
+<script src="__PUBLIC__/js/ajaxupload.js"></script>
+
+<script type="text/javascript">
+	var uploadfileurl = "{$uploadfileurl}";
+    var uploadimgurl = "{$uploadimgurl}";
+    var fileext = "";
+
+    function formcheck() {
+        var flag;
+        var mess;
+        if ($('#title').val() == '') {
+            flag = 1;
+            mess = '标题必填';
+        }
+        if ($('#fileurl').val() == '') {
+            flag = 1;
+            mess = '请上传文档';
+        }
+        if (isNaN(parseInt($('#score').val()))) {
+            flag = 1;
+            mess = '必须为整数且大于等于0';
+        }
+        if (flag == 1) {
+            flag = 0;
+            //alert(mess);
+            $.mtceo.tip({content: mess, icon: 'error'});
+            return false;
+        }
+        return true;
+
+    }
+
+    $(function () {
+        $('.J_cate_select').cate_select('请选择');
+        // 单个
+        $('#intro').artTxtCount($('#intro_tips'), 255);
+        $('#title').artTxtCount($('#titleTip'), 50);
+		//自动获取标签
+        $('#J_gettags').live('click', function () {
+            getLabels();
+        });
+		//监控标题的改变
+		$("#title").bind("input propertychange",function(event){
+			getLabels();
+		});
+        //插件调用
+        var ajaxupload = new AjaxUpload('#J_upload_file', {
+            action: uploadfileurl,
+            name: "file",
+            responseType: 'json',
+            onSubmit: function (file, ext) {
+                if (ext && /^({:C('mtceo_doctype')})$/.test(ext)) {
+                    //ext是后缀名
+                    //oBtn.value = "正在上传…";
+                } else {
+                    $.mtceo.tip({content: "不支持此格式！", icon: 'error'});
+                    return false;
+                }
+            },
+            onComplete: function (file, response) {
+                if (response.status) {
+
+                    $('#fileurl').val(response.info.name);
+                    $('#oldname').val(response.info.oldname);
+                    $('#title').val(response.info.oldname);
+                    $('#filesize').val(response.info.size);
+                    $('#fileurl1').val(response.info.name);
+                    $('#ext').val(response.info.ext);
+                    $('#J_upload_file').html("<span>{:L('hasupload')}</span>");
+                    $('#J_upload_file').prop({disabled: true});
+                } else {
+                    $.mtceo.tip({content: response.info, icon: 'error'});
+                }
+            }
+        });
+        if ({:C('mtceo_web_model')}==1)
+        {
+		    var ajaxupload1 = new AjaxUpload('#J_upload_img', {
+                action: uploadimgurl,
+                name: "file",
+                responseType: 'json',
+                onSubmit: function (file, ext) {
+                    if (ext && /^(jpeg|gif|png|jpg)$/.test(ext)) {
+                        //ext是后缀名
+                        //oBtn.value = "正在上传…";
+                    } else {
+                        $.mtceo.tip({content: "不支持此格式！", icon: 'error'});
+                        return false;
+                    }
+                },
+                onComplete: function (file, response) {
+                    if (response.status) {
+                        $('#imgurl').val(response.info.name);
+                        $('#imgurl1').val(response.info.name);
+                        $('#J_upload_img').html("<span>{:L('hasupload')}</span>");
+                        $('#J_upload_img').prop({disabled: true});
+                    } else {
+
+                        $.mtceo.tip({content: response.info, icon: 'error'});
+                    }
+
+                }
+            });
+			/*
+            var ajaxupload2 = new AjaxUpload('#J_upload_img1', {
+                action: uploadimgurl,
+                name: "file",
+                responseType: 'json',
+                onSubmit: function (file, ext) {
+                    if (ext && /^(swf)$/.test(ext)) {
+                        //ext是后缀名
+                        //oBtn.value = "正在上传…";
+                    } else {
+                        $.mtceo.tip({content: "不支持此格式！", icon: 'error'});
+                        return false;
+                    }
+                },
+                onComplete: function (file, response) {
+                    if (response.status) {
+                        $('#viewurl').val(response.info.name);
+                        $('#viewurl1').val(response.info.name);
+                        $('#J_upload_img1').html("<span>{:L('hasupload')}</span>");
+                        $('#J_upload_img1').prop({disabled: true});
+                    } else {
+                        $.mtceo.tip({content: response.info, icon: 'error'});
+                    }
+
+                }
+            });
+			*/
+        }
+    });
+	function getLabels(){
+		var title = $.trim($('#title').val());
+
+        if (title == '') {
+            $.mtceo.tip({content: '标题为空', icon: 'alert'});
+            return false;
+        }
+        $.getJSON('{:U("doc/ajax_gettags")}', {title: title}, function (result) {
+            if (result.status == 1) {
+                $('#tags').val(result.data);
+            } else {
+                $.mtceo.tip({content: result.msg});
+            }
+        });
+	}
+</script>
+<include file="public:footer"/>

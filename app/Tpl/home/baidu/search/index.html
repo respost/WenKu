@@ -1,0 +1,82 @@
+<include file="public:head" />
+<div class="clear menu"><a href="{:U('index/index')}">文库首页</a><em class="bgcur"></em>文档搜索</div>
+
+
+<div class="cleft">
+
+<div class="searchword">搜索“<s>{$searchword}</s>”的相关结果</div>
+
+
+<div class="divform">
+<table width="100%" class="listform" cellspacing="0" cellpadding="0" border="0">
+  <tr>
+    <th width="32">格式</th>
+    <th width="394">文档名称</th>
+    <th  width="100">上传者</th>
+    <th width="70">需积分</th>
+    <th width="70">上传时间</th>
+  </tr>
+  
+  <mtceo:doc type="lists" order="add_time desc" pagenum="20" ext="$ext" maxscore="$maxscore" day="$day" minscore="$minscore" search="$searchword">
+  <volist name="data['list']" id="vo">
+  <tr>
+    <td><div class="icon {$vo.ext}"></div></td>
+    <td><a href="{:U('doc/doccon',array('id'=>$vo['id']))}">{$vo.title|msubstr=###,0,25|getsearchtitle=$searchword,###}</a></td>
+    <td><a href="{:U('member/mydoclist',array('uid'=>$vo['uid']))}">{$vo['uid']|getusername}</a></td>
+    <td>{$vo.score}</td>
+    <td>{$vo.add_time|fdate}</td>
+  </tr>
+  </volist>
+
+  
+</table>
+
+
+
+
+
+
+</div>
+
+<div class="page-nav page-center"> 
+<div class="page-inner"> 
+<div class="page-content">
+{$data['page']}</div> </div></div>
+
+</mtceo:doc>
+</div>
+<div class="cright" >
+<div style="padding-left:20px;">
+
+<a href="{:U('doc/doc_share')}" class="cateicons midupbtn"></a>
+</div>
+
+<div class="searchmenu" style="padding-left:20px;">
+
+<form id="search" name="searchform" method="get" >
+<input type="hidden" value="{$searchword}" name="searchword" id="searchword" />
+<input type="hidden" value="{$search.time}" name="time" id="time" />
+<input type="hidden" value="{$search.score}" name="score" id="score" />
+
+<h3>按时间：</h3>
+<ul>
+<li><a href="javascript:void(0)"   onclick="formsub(0,'time')" <if condition="$search.time eq 0">class="cur"</if> >不限</a></li>
+<li><a href="javascript:void(0)"  onclick="formsub(1,'time')" <if condition="$search.time eq 1">class="cur"</if>>24小时内</a></li>
+<li><a href="javascript:void(0)"  onclick="formsub(3,'time')" <if condition="$search.time eq 3">class="cur"</if>>三天内</a></li>
+<li><a href="javascript:void(0)"  onclick="formsub(30,'time')" <if condition="$search.time eq 30">class="cur"</if>>一个月内</a></li>
+</ul>
+
+<h3>按积分：</h3>
+<ul>
+<li><a href="javascript:void(0)" onclick="formsub(0,'score')" <if condition="$search.score eq 0">class="cur"</if>>不限</a></li>
+<li><a href="javascript:void(0)" onclick="formsub(1,'score')" <if condition="$search.score eq 1">class="cur"</if>>免费</a></li>
+<li><a href="javascript:void(0)" onclick="formsub(2,'score')" <if condition="$search.score eq 2">class="cur"</if>>需积分</a></li>
+</ul>
+</form>
+
+</div>
+</div>
+<div class="clear">
+
+</div>
+<include file="public:footer" />

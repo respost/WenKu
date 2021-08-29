@@ -1,0 +1,63 @@
+
+<form id="comment_form" method="post" action="{:U('common/ajaxadd_comment')}">
+
+<textarea name="info" id="info">请输入评论内容</textarea> 
+ <input type="hidden" name="itemid" value="{$id}" />
+ <input type="hidden" name="commentid" value="{$commentcount}" />
+  <input type="hidden" name="toid" id="toid" value="0" />
+ <input type="hidden" name="uid" value="{$uid}" />
+ <input type="hidden" name="typeid" value="1" />
+
+ 
+ <input style="margin-top:20px;" type="submit" class="wk-btn2 g-n-btns" value="发布" />
+
+</form>
+<script>
+$(function() {
+	KindEditor.create('#info', {
+		 themeType : 'simple',
+		
+		uploadJson : '{:U("attachment/editer_upload")}',
+		fileManagerJson : '{:U("attachment/editer_manager")}',
+		allowFileManager : true,
+		items:['emoticons'],
+		emotPath:'./public/images/emot/{$emot}/',
+		emotwidth: '{$emotwidth}',
+		emotnum:'{$emotnum}',
+	});
+
+	
+});
+</script>
+
+<script type="text/javascript">
+
+$(function(){
+
+
+
+
+//$('#comment_form').ajaxsubmit();
+	
+
+	
+$('#comment_form').ajaxForm({success:complate,dataType:'json'});
+
+ 
+function complate(result){
+	
+	if(result.status == 1){
+		
+        $.mtceo.tip({content:result.msg});
+        setTimeout(function (){window.location.reload();},1000);
+	} else {
+		$.mtceo.tip({content:result.msg, icon:'alert'});
+	}
+}
+	
+	
+	
+
+    
+});
+</script>

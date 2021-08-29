@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>会员注册 - {$seoconfig.title}</title>
+<meta content="{$seoconfig.description}" name="description">
+<meta content="{$seoconfig.keywords}" name="keywords">
+
+<link href="__PUBLIC__/theme/baidu/css/base.css" rel="stylesheet" media="screen" />
+<link href="__PUBLIC__/theme/baidu/css/mtceodialogtip.css" rel="stylesheet" media="screen" />
+<script src="__PUBLIC__/js/jquery-1.8.3.js"></script>
+<script src="__PUBLIC__/js/mtceo.js"></script>
+<script src="__PUBLIC__/js/home_extend.js"></script>
+</head>
+
+<body style="background:#eee;">
+<div class="login">
+	<div class="ltop"></div>
+    <div class="fixed">
+    	<div class="lft fl">
+        	<div class="logo">
+        		<a href="{:C('mtceo_site_url')}">
+				
+				</a>
+    		</div>
+            <div id="sels">
+            	<ul>
+            		
+<li><a href="{:U('user/login')}">用户登录</a></li>
+<li><a href="#" class="cur">会员注册</a></li>
+<li><a href="{:U('findpwd/index')}">忘记密码</a></li>
+
+               </ul>
+            </div>
+        </div>
+        <!--left-->
+        <div class="rgt fl">
+        	<div class="parts" sel="true">
+
+<form id="signupform" method="post" action="{:U('user/register')}" >
+	
+	
+	
+    <p><span>邮箱：</span><input type="text"  class="ins" name="email" id="email" />
+    <s id="emailTip"></s>
+    </p>
+    
+	<p><span>登录账号：</span><input type="text"  class="ins" name="username" id="username" />
+   <s id="usernameTip"></s>
+    </p>
+    <p><span>登录密码：</span><input type="password" class="ins" name="password" id="password" />
+    <s id="passwordTip"></s></p>
+	<p><span>确认密码：</span><input type="password" class="ins" name="repassword" id="repassword" />
+	<s id="repasswordTip"></s></p>
+	<p><span>验证码：</span><input type="text" class="ins" name="captcha" />
+	<img style="margin-left:5px;" title="刷新" class="verify_img" id="captcha" url="{:U('common/code','time=')}" onclick="javascript:newgdcode(this);"	src="{:U('common/code')}" /></p>
+    
+	
+	<input type="hidden" class="ins" name="iscaptcha" value="1" />
+	<input  type="hidden" id="ret_url" name="ret_url" value="{$ret_url}"  />
+	
+    <p class="pbtns" style="padding-left:60px;">
+    	<input id="id_login_btn" type="submit" class="btns" value="注册" tabindex="3"/>&nbsp;
+    	
+    </p>
+   
+
+</form>
+
+            </div>
+            <!--parts-->
+        </div>
+        <!--right-->
+    </div>
+    
+    <div class="lbot"></div>
+    
+</div>
+
+<script src="__PUBLIC__/js/formvalidator.js"></script>
+<script src="__PUBLIC__/js/formValidatorRegex.js"></script>
+<script>
+var check_name_url = "{:U('common/ajax_check_name')}";
+var check_email_url = "{:U('common/ajax_check_email')}";
+$(function(){
+	$.formValidator.initConfig({formID:"signupform",theme:'mt_theme',mode:'FixTip' });
+	$("#username").formValidator({onShow:"璇疯緭鍏ョ敤鎴峰悕",onFocus:"3~16瀛楃"}).inputValidator({min:3,max:16,onError:"3~16瀛楃"})
+    .ajaxValidator({
+    	
+    	url : check_name_url,
+		dataType : 'json',
+		async:'true',
+		success : function(result){	
+    	
+            if(!result.status){
+                return false;
+			}else{
+                return true;
+			}
+		},
+		onError:"璇ョ敤鎴峰凡瀛樺湪",
+		onWait:"姝ｅ湪妫€楠?,
+		
+});
+$("#email").formValidator({onShow:"璇峰～鍐欓偖绠?,onFocus:"璇峰～鍐欓偖绠?}).inputValidator({min:1,onerror:"璇峰～鍐欓偖绠?}).regexValidator({regExp:"email",dataType:"enum",onError:"閭欢鏍煎紡閿欒"})
+.ajaxValidator({
+	    
+		url : check_email_url,
+		dataType : 'json',
+		async:'true',
+		success : function(result){	
+        if(!result.status){
+                return false;
+			}else{
+                return true;
+			}
+		},
+		onError : '閭宸茬粡瀛樺湪',
+		onWait : '姝ｅ湪妫€娴?
+	});
+$("#password").formValidator({onShow:"璇疯緭鍏ュ瘑鐮?,onFocus:"6浣崀16浣?,onCorrect:"瀵嗙爜鍚堟硶"}).inputValidator({min:6,max:16,empty:{leftEmpty:false,rightEmpty:false,emptyError:"瀵嗙爜涓よ竟涓嶈兘鏈夌┖绗﹀彿"},onError:"瀵嗙爜闀垮害閿欒,璇风‘璁?});
+$("#repassword").formValidator({onShow:"鍐嶆杈撳叆瀵嗙爜",onFocus:"6浣崀16浣?,onCorrect:"瀵嗙爜涓€鑷?}).inputValidator({min:6,empty:{leftEmpty:false,rightEmpty:false,emptyError:"閲嶅瀵嗙爜涓よ竟涓嶈兘鏈夌┖绗﹀彿"},onError:"閲嶅瀵嗙爜閿欒"}).compareValidator({desID:"password",operateor:"=",onError:"瀵嗙爜涓嶄竴鑷?});
+
+	
+	
+	
+	
+
+});
+
+
+</script>
+
+</body>
+</html>

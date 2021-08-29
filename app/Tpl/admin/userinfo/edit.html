@@ -1,0 +1,88 @@
+<!--编辑会员-->
+<div class="dialog_content">
+	<form id="info_form" action="{:u('userinfo/edit')}" method="post">
+	<table width="100%" class="table_form">
+		<tr>
+			<th width="100">会员昵称 :</th>
+			<td>{$info.uid|getusername}</td>
+		</tr>
+	   
+        <tr>
+			<th>出生日期:</th>
+			<td><input type="text" name="birthday" id="birthday" class="date input-text" value="{$info.byear}-{$info.bmonth}-{$info.bday}" size="27"></td>
+		</tr>
+         <tr>
+			<th>出生地 :</th>
+			<td id="areadata">
+			
+			</td>
+		</tr>
+		<tr>
+			<th>性别:</th>
+			<td><select name="gender" id="gender">
+			
+			<option <if condition="$info['gender'] eq 1">selected</if> value="1">男</option>
+			<option <if condition="$info['gender'] eq 2">selected</if> value="2">保密</option>
+			<option <if condition="$info['gender'] eq 3">selected</if> value="0">女</option>
+			</select></td>
+		</tr>
+		<tr>
+			<th>个人标签 :</th>
+			<td><input name="tags" type="text" id="tags" value="{$info.tags}" style="height:18px;line-height:18px;" size="60" /></td>
+		</tr>
+		<tr>
+			<th>个人标签说明 :</th>
+			<td><font color=red>个人标签必须用半角逗号,隔开才可以识别每个标签</font></td>
+		</tr>
+		<tr>
+			<th>联系QQ :</th>
+			<td><input name="contact" type="text" id="contact" style="height:18px;line-height:18px;" value="{$info.contact}" onkeyup="this.value=this.value.replace(/[^0-9.]/g,'')" onafterpaste="this.value=this.value.replace(/[^0-9.]/g,'')" /></td>
+		</tr>
+		<tr>
+			<th>个人签名 :</th>
+			<td><textarea name="intro" id="intro" style="width:240px;height:100px;">{$info.intro}</textarea></td>
+		</tr>
+		
+
+	</table>
+	<input type="hidden" name="uid" value="{$info.uid}" />
+	</form>
+	
+</div>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/js/calendar/calendar-blue.css"/>
+<script src="__PUBLIC__/js/calendar/calendar.js"></script>
+
+<script>
+Calendar.setup({
+    inputField : "birthday",
+    ifFormat   : "%Y-%m-%d",
+    showsTime  : true,
+    timeFormat : "24"
+});
+
+$(function(){
+	$.formValidator.initConfig({formID:"info_form",theme:'126',mode:'AutoTip',inIframe:true,ajax:true});
+
+	$('#info_form').ajaxForm({success:complate,dataType:'json'});
+	
+	function complate(result){
+
+		
+		if(result.status == 1){
+			
+			$.dialog.get(result.dialog).close();
+            $.mtceo.tip({content:result.msg});
+            window.location.reload();
+		} else {
+			$.mtceo.tip({content:result.msg, icon:'alert'});
+		}
+	}
+	$('#areadata').province_city_county("{$info.province}","{$info.city}","{$info.county}");
+	 //$('#areadata').html("<select id='province' name='province' style='width: 100px'></select>" +
+	    		//"<select id='city' name='city' style='width: 100px'></select>" +
+	    	//	"<select id='area' name='area' style='width: 100px'></select>");
+	//$('#areadata').html("sl");
+
+});
+
+</script>

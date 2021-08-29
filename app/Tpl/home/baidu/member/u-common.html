@@ -1,0 +1,66 @@
+<div class="r-user">
+
+<div style="overflow:hidden;">
+<div class="topicimg"><a href="#">
+<img src="{:avatar($hisuid,'120')}" width="80" height="80" />
+</a>
+
+</div>
+<div style="margin-left:95px;">
+<p class="title"><a href="#">{$hisuid|getusername}</a>
+<if condition="$memberfocusid eq 3">
+<div class="gzic" data-uri="{:U('ucenter/delgz')}" onClick="quxiaogz({$hisuid},this)">
+<span  class="gz-icon xhgz-icon"></span>相互关注
+</div>
+<elseif condition="$memberfocusid eq 1" />
+<div class="gzic" data-uri="{:U('ucenter/delgz')}" onClick="quxiaogz({$hisuid},this)">
+<span  class="gz-icon ygz-icon"></span>已关注
+</div>
+<elseif condition="$memberfocusid eq 5" />
+<div class="gzic" style="text-align:center;">你自己</div>
+<else />
+<div class="gzic" data-uri="{:U('ucenter/addgz')}" onClick="guanzhu({$hisuid},this)">
+<span  class="gz-icon jgz-icon"></span>加关注
+</div></if>
+
+
+
+</p>
+
+
+<p class="grayinfo">{$hisuid|getuserintro|msubstr=###,0,50}</p>
+</div>
+</div>
+<div class="userinfo">
+<dl>
+<dd>关注</dd>
+<dd><a href="{:U('member/guanzhu',array('uid'=>$hisuid))}">{$hisuid|getguanzhu}</a></dd>
+</dl>
+<dl>
+<dd>粉丝</dd>
+<dd><a href="{:U('member/fensi',array('uid'=>$hisuid))}">{$hisuid|getfensi}</a></dd>
+</dl>
+<dl style="border:0">
+<dd><span class="users-icon xh-icon"></span></dd>
+<dd><a href="{:U('member/mydoclist',array('uid'=>$hisuid))}" title="共收到{$hisuid|getbxh}个喜欢">{$hisuid|getbxh}</a></dd>
+</dl>
+</div>
+
+<div class="usermenu">
+<ul>
+<li><a href="{:U('member/xhdoclist',array('uid'=>$hisuid))}" class="users-icon sc-icon">喜欢<span class="grayinfo">({$hisuid|getxhcount})</span></a></li>
+<li style="display:none;"><a href="{:U('member/topiclist',array('uid'=>$hisuid))}" class="users-icon tiezi-icon">帖子<span class="grayinfo">({$hisuid|gettopiccount})</span></a></li>
+<li><a href="{:U('member/mydoclist',array('uid'=>$hisuid))}" class="users-icon tiezi-icon">文档<span class="grayinfo">({$hisuid|getmydoccount})</span></a></li>
+
+
+
+</ul>
+
+
+
+
+</div>
+
+
+
+</div>

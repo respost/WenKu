@@ -1,0 +1,140 @@
+<!--编辑会员-->
+<div class="dialog_content">
+	<form id="info_form" action="{:u('user/edit')}" method="post">
+	<table width="100%" class="table_form">
+		<tr>
+			<th width="100">会员昵称 :</th>
+			<td>{$info.username}</td>
+		</tr>
+	    <tr>
+			<th>会员头像 :</th>
+			<td>
+			<input type="hidden" name="img" id="J_img" class="input-text fl mr10" size="30" value="{$info.img}">
+            	<input type="text" name="img1" id="J_img1" class="input-text fl mr10" disabled="disabled" size="30" value="{$info.img}">
+            	<div  id="J_upload_img" class="upload_btn"><span>{:L('upload')}</span></div>
+                <img src="{:avatar($info['uid'], 32)}" />
+				<notempty name="info['img']"><span class="attachment_icon J_attachment_icon" file-type="image" file-rel="{:avatar($info['uid'], 32)}"><img src="__ROOT__/public/images/filetype/image_s.gif" /></span></notempty>
+	
+            </td>
+		</tr>
+        <tr>
+			<th>会员邮箱 :</th>
+			<td><input type="text" name="email" id="email" class="input-text" value="{$info.email}" size="30"></td>
+		</tr>
+     
+        <tr>
+			<th>新密码 :</th>
+			<td><input type="password" name="password" id="password" class="input-text" size="30">
+            <label class="gray">&nbsp;&nbsp;不修改则留空</label>
+            </td>
+		</tr>
+        <tr>
+			<th>重复密码 :</th>
+			<td><input type="password" name="repassword" id="repassword" class="input-text" size="30"></td>
+		</tr>
+         <tr>
+			<th>用户组 :</th>
+			<td><select name="roleid" id="roleid">
+			<volist name="role" id="vo">
+		    	<option value="{$vo.id}" <if condition="$info['roleid'] eq $vo['id']">selected</if>>{$vo.name}</option>
+				
+				</volist>
+			</select></td>
+		</tr>
+	    <tr>
+			<th>{:L('enabled')} :</th>
+			<td>
+				<label><input type="radio" name="status" value="1" <if condition="$info.status eq 1">checked</if>> {:L('yes')}</label>&nbsp;&nbsp;
+				<label><input type="radio" name="status" value="0" <if condition="$info.status eq 0">checked</if>> {:L('no')}</label>
+			</td>
+		</tr>
+	</table>
+	<input type="hidden" name="uid" value="{$info.uid}" />
+	</form>
+</div>
+<script src="__PUBLIC__/js/ajaxupload.js"></script>
+<script>
+
+var check_name_url = "{:U('user/ajax_check_name', array('id'=>$info['uid']))}";
+var check_email_url = "{:U('user/ajax_check_email', array('id'=>$info['uid']))}";
+var uploadimgurl="{:U('user/ajax_upload_imgs')}";
+
+$(function(){
+	$.formValidator.initConfig({formID:"info_form",theme:'126',mode:'AutoTip',inIframe:true,ajax:true});
+$("#email").formValidator({onShow:"请填写邮箱",onFocus:"请填写邮箱"}).inputValidator({min:1,onerror:"请填写邮箱"}).regexValidator({regExp:"email",dataType:"enum",onError:"邮件格式错误"})
+.ajaxValidator({
+	    
+		url : check_email_url,
+		dataType : 'json',
+		async:'true',
+		success : function(result){	
+        if(!result.status){
+                return false;
+			}else{
+                return true;
+			}
+		},
+		onError : '邮箱已经存在',
+		onWait : '正在检测'
+	}).defaultPassed();
+$("#password").formValidator({onShow:"请输入密码",onFocus:"至少1个长度",onCorrect:"密码合法"}).inputValidator({min:0,max:16,empty:{leftEmpty:false,rightEmpty:false,emptyError:"密码两边不能有空符号"},onError:"密码长度错误,请确认"}).passwordValidator({}).defaultPassed();
+$("#repassword").formValidator({onShow:"再次输入密码",onFocus:"至少1个长度",onCorrect:"密码一致"}).inputValidator({min:0,empty:{leftEmpty:false,rightEmpty:false,emptyError:"重复密码两边不能有空符号"},onError:"重复密码不能为空,请确认"}).compareValidator({desID:"password",operateor:"=",onError:"密码不一致"}).defaultPassed();
+
+	$('#info_form').ajaxForm({success:complate,dataType:'json'});
+	
+	function complate(result){
+
+		
+		if(result.status == 1){
+			
+			$.dialog.get(result.dialog).close();
+            $.mtceo.tip({content:result.msg});
+            window.location.reload();
+		} else {
+			$.mtceo.tip({content:result.msg, icon:'alert'});
+		}
+	}
+	
+	 var ajaxupload = new AjaxUpload('#J_upload_img',{
+			action:uploadimgurl,
+			name:"file",
+			responseType:'json',
+			onSubmit:function(file,ext){
+				if(ext && /^(jpg|jpeg|png|gif)$/.test(ext)){
+					//ext是后缀名
+					//oBtn.value = "正在上传…";
+					
+				}else{	
+					//oRemind.style.color = "#ff3300";
+					//oRemind.innerHTML = "不支持非图片格式！";
+					
+					return false;
+				}
+			},
+			onComplete:function(file,response){
+				
+				//oBtn.disabled = "";
+				//oBtn.value = "再上传一张图片";
+				//oRemind.innerHTML = "";
+				//var newChild =  document.createElement("li");
+				//newChild.innerHTML = file;
+				 
+				if(response.status){
+				$('#J_img1').val(response.info);
+				$('#J_img').val(response.info);
+				$('#J_upload_img').html("<span>{:L('hasupload')}</span>");
+				$('#J_upload_img').prop({disabled:true});
+				}
+				else
+				{
+					$.mtceo.tip({content:response.info, icon:'error'});
+					
+				}
+				
+			}
+		});
+	
+
+});
+
+</script>

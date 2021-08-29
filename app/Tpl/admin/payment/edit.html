@@ -1,0 +1,102 @@
+<!--编辑商品接口-->
+<div class="dialog_content" style="padding:0 20px;">
+    <form id="info_form" action="{:U('payment/edit')}" method="post">
+    <table width="100%" class="table_form">
+        <tr>
+            <th>名称 :</th>
+            <td>{$info.name}</td>
+        </tr>
+        <tr>
+            <th>英文标识 :</th>
+            <td><input type="text"  name="mark" id="mark" class="input-text" size="30" value="{$info.mark}"></td>
+        </tr>
+         <tr>
+			<th>{:L('article_cate_img')} :</th>
+			<td>
+                	<input type="hidden" name="logo" id="J_img" class="input-text fl mr10" size="30" value="{$info.logo}">
+            	<input type="text" name="logo1" id="J_img1" class="input-text fl mr10" disabled="disabled" size="30" value="{$info.logo}">
+            	<div id="J_upload_img" class="upload_btn"><span>{:L('upload')}</span></div>
+                <notempty name="info['logo']"><span class="attachment_icon J_attachment_icon" file-type="image" file-rel="{:attach($info['logo'], 'payment')}"><img src="__PUBLIC__/images/filetype/image_s.gif" /></span></notempty></td>
+		</tr>
+       
+        <tr>
+            <th>商户 :</th>
+            <td><input type="text"  name="merchant" id="merchant" class="input-text" size="30" value="{$info.merchant}"></td>
+        </tr>
+        <tr>
+            <th>商户号 :</th>
+            <td><input type="text"  name="account" id="account" class="input-text" size="30" value="{$info.account}"></td>
+        </tr>
+        <tr>
+            <th>key :</th>
+            <td><input type="text"  name="key" id="key" class="input-text" size="30" value="{$info.key}"></td>
+        </tr>
+        <tr>
+            <th>描述 :</th>
+            <td><textarea rows="2" cols="60" name="description" id="description" class="textInput">{$info.description}</textarea></td>
+        </tr>
+         <tr>
+            <th>是否启用 :</th>
+            <td>
+            	<label style="width: 45px"><input type="radio" name="status" value="0" <eq name="info.status" value="0">checked="checked"</eq> />否</label>
+				<label style="width: 45px"><input type="radio" name="status" value="1" <eq name="info.status" value="1">checked="checked"</eq> />是</label>
+			</td>
+        </tr>
+
+    </table>
+    <input type="hidden" name="id" value="{$info.id}" />
+    
+    </form>
+</div>
+<script src="__PUBLIC__/js/ajaxupload.js"></script>
+<script>
+var uploadimgurl="{:U('payment/ajax_upload_img')}";
+$(function(){
+	$('#info_form').ajaxForm({success:complate,dataType:'json'});
+	function complate(result){
+		if(result.status == 1){
+			
+			$.dialog.get(result.dialog).close();
+			$.mtceo.tip({content:result.msg});
+			window.location.reload();
+		} else {
+			$.mtceo.tip({content:result.msg, icon:'alert'});
+		}
+	}
+	var ajaxupload = new AjaxUpload('#J_upload_img',{
+		action: uploadimgurl,
+		name:"file",
+		responseType:'json',
+		onSubmit:function(file,ext){
+			if(ext && /^(jpg|jpeg|png|gif)$/.test(ext)){
+				//ext是后缀名
+				//oBtn.value = "正在上传…";
+				
+			}else{	
+				//oRemind.style.color = "#ff3300";
+				//oRemind.innerHTML = "不支持非图片格式！";
+				
+				return false;
+			}
+		},
+		onComplete:function(file,response){
+			
+			
+			if(response.status){
+			$('#J_img1').val(response.info);
+			$('#J_img').val(response.info);
+			$('#J_upload_img').html("<span>{:L('hasupload')}</span>");
+			$('#J_upload_img').prop({disabled:true});
+			}
+			else
+			{
+             
+				$.mtceo.tip({content:response.info, icon:'error'});
+			}
+			
+		}
+	});
+	
+
+});
+</script>

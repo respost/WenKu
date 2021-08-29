@@ -1,0 +1,43 @@
+搭建环境：Apache2.4+php5.6+mysql5.5
+
+一、安装OpenOffice 4.0.0，下载地址http://soft.hao123.com/soft/appid/5541.html
+
+1.开始 → 运行 → 输入Dcomcnfg → 组件服务 → 计算机 → 我的电脑 → DCOM配置 → OpenOffice Service Manager → 属性
+
+2.安全 → 启动和激活权限 → 自定义 → 编辑 → 添加 Everyone 的权限 → 赋予全部权限
+
+3.标识 → 交互式用户
+
+4.打开OpenOffice软件，使用cmd进入到OpenOffice运行目录（我的是C:\Program Files (x86)\OpenOffice 4\program）,执行下面的命令：
+soffice -headless-accept=”socket,host=127.0.0.1,port=8100;urp;” -nofirststartwizard
+成功后，即在后台运行了该软件。
+
+--------------------------------------------------------------------------------------------------------------------
+
+二、PHP开启dcom扩展
+
+打开php.ini
+extension=php_com_dotnet.dll //把前面的分号去掉
+com.allow_dcom = true        //把前面的分号去掉，改为true
+注意：php5.4以上的版本有些php.ini里没有extension=php_com_dotnet.dll的配置，需要自行添加（前提是：ext目录里有php_com_dotnet.dll）
+
+
+三、数据库配置
+data/config/db.php
+
+
+四、后台http://域名/?g=admin&m=index&a=login
+账号：admin
+密码：123456
+--------------------------------------------------------------------------------------------------------------------
+解决php5.5版本以上”No input file specified“问题：
+
+htaccess文件中的
+RewriteRule ^(.*)$ index.php/$1 [QSA,PT,L]
+
+在默认情况下会导致No input file specified.
+
+修改成
+
+RewriteRule ^(.*)$ index.php [L,E=PATH_INFO:$1]
+--------------------------------------------------------------------------------------------------------------------

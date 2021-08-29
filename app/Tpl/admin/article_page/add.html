@@ -1,0 +1,55 @@
+<include file="public:header" />
+<!--添加文章-->
+<form id="info_form" action="{:U('article_page/add')}" method="post" enctype="multipart/form-data">
+<div class="pad_lr_10">
+	<div class="col_tab">
+		<ul class="J_tabs tab_but cu_li">
+			<li class="current">{:L('article_basic')}</li>
+			
+		</ul>
+		<div class="J_panes">
+			<div class="content_list pad_10">
+				<table width="100%" cellspacing="0" class="table_form">
+
+		            <tr>
+						<th>{:L('article_title')} :</th>
+						<td>
+							<input type="text" name="title" id="J_title" class="input-text" size="30">
+					        <input type="hidden" value="" name="color" id="J_color">
+					         <input type="hidden" value="{$menuid}" name="menuid">
+					        <a href="javascript:;" class="color_picker_btn"><img class="J_color_picker" data-it="J_title" data-ic="J_color" src="__PUBLIC__/images/color.png"></a>
+		                </td>
+					</tr>
+		            <tr>
+						<th>详细内容 :</th>
+		                <td><textarea name="info" id="info" style="width:68%;height:400px;visibility:hidden;resize:none;"></textarea></td>
+					</tr>
+				</table>
+			</div>
+
+        </div>
+		<div class="mt10"><input type="submit" value="{:L('submit')}" id="dosubmit" name="dosubmit" class="btn btn_submit" style="margin:0 0 10px 100px;"><br /><br /><br /></div>
+	</div>
+</div>
+</form>
+<include file="public:footer" />
+<script src="__PUBLIC__/js/colorpicker.js"></script>
+<script src="__PUBLIC__/js/kindeditor/kindeditor.js"></script>
+<script>
+$(function() {
+	KindEditor.create('#info', {
+		uploadJson : '{:U("attachment/editer_upload")}',
+		fileManagerJson : '{:U("attachment/editer_manager")}',
+		allowFileManager : true
+	});
+	$('ul.J_tabs').tabs('div.J_panes > div');
+
+	//颜色选择器
+	$('.J_color_picker').colorpicker();
+
+
+	
+});
+</script>
+</body>
+</html>

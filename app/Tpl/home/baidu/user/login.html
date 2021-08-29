@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>用户登录 - {$seoconfig.title}</title>
+<meta content="{$seoconfig.description}" name="description">
+<meta content="{$seoconfig.keywords}" name="keywords">
+
+<link href="__PUBLIC__/theme/baidu/css/base.css" rel="stylesheet" media="screen" />
+<link href="__PUBLIC__/theme/baidu/css/mtceodialogtip.css" rel="stylesheet" media="screen" />
+<script src="__PUBLIC__/js/jquery-1.8.3.js"></script>
+<script src="__PUBLIC__/js/mtceo.js"></script>
+<script src="__PUBLIC__/js/home_extend.js"></script>
+</head>
+
+<body style="background:#eee;">
+<div class="login">
+	<div class="ltop"></div>
+    <div class="fixed">
+    	<div class="lft fl">
+        	<div class="logo">
+        		<a href="{:C('mtceo_site_url')}">
+				
+				</a>
+    		</div>
+            <div id="sels">
+            	<ul>
+            		
+<li><a href="#" class="cur">用户登录</a></li>
+<li><a href="{:U('user/register')}">没有账号？免费注册</a></li>
+<li><a href="{:U('findpwd/index')}">忘记密码</a></li>
+
+               </ul>
+            </div>
+        </div>
+        <!--left-->
+        <div class="rgt fl">
+        	<div class="parts" sel="true">
+
+<form id="id_form" method="post" action="{:U('user/login')}">
+	
+	
+	
+    <p>账号：<input type="text" tabindex="1" class="ins" name="username" id="id_username" />
+    </p>
+    <p>密码：<input type="password" tabindex="2" class="ins" name="password" id="id_password" /></p>
+    <p class="pbtns">
+    	<input id="id_login_btn" type="submit" class="btns" value="登录" tabindex="3"/>&nbsp;
+    	<a href="{:U('findpwd/index')}" id="lost" tabindex="5">忘记密码</a>
+    </p>
+   
+   <input  type="hidden" id="ret_url" name="ret_url" value="{$ret_url}"  />
+    <p class="ol">
+    	<a href="{:U('oauth/index',array('mod'=>'sina'))}" class="sina">新浪微博登录</a>
+    	<a href="{:U('oauth/index',array('mod'=>'qq'))}" class="qq">QQ登录</a>
+    	<a href="{:U('oauth/index',array('mod'=>'taobao'))}" class="taobao">淘宝登录</a>
+    	
+       
+    </p>
+</form>
+
+            </div>
+            <!--parts-->
+        </div>
+        <!--right-->
+    </div>
+    
+    <div class="lbot"></div>
+    
+</div>
+
+
+</body>
+</html>

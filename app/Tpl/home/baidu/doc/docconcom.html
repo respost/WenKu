@@ -1,0 +1,171 @@
+<include file="public:head" />
+
+<div class="menu"><a href="{:U('index/index')}">文库首页</a><em class="bgcur"></em>{:getnavlist($info['cateid'])}</div>
+<div class="conbox">
+<div class="comment-left">
+<div class="topic-comment">
+<div class="greentitle" style="margin:15px 0px">
+文档评论........({$commentcount}条)&nbsp;&nbsp;<a href="{:U('doc/doccon',array('id'=>$id))}">返回“{$info.title}”</a></div>
+
+<volist name="commentdata['list']" id="vo">
+<div class="comment-content">
+<div class="comment-content-left">
+<a href="{:U('member/mydoclist',array('uid'=>$vo['uid']))}"><img src="{:avatar($vo['uid'],'48')}" /></a>
+<p>{$vo.commentid}楼</p>  
+
+</div>
+<div class="comment-content-right">
+
+<p><a href="{:U('member/mydoclist',array('uid'=>$vo['uid']))}">{$vo.uid|getusername}</a><span class="fr">{$vo.add_time|fdate}</span></p>  
+
+
+<if condition="$vo.subid gt 0">
+<p class="yinyong">引用{$vo.subid}楼 的话：{$vo.subinfo}
+</p>
+</if>
+<p>{$vo.info}</p>  
+<p><span class="fr">
+<a href="javascript:void(0)" data-uri="{:U('common/youyong')}" onClick="youyong({$vo.id},this)">对我有用</a>
+&nbsp;[<s id="youyong{$vo.id}">{$vo.youyong}</s>]<em>|</em><a href="javascript:void(0)" onclick="yinyong({$vo.id},{$vo.commentid})">引用此评论</a></span></p> 
+</div>
+
+
+</div>
+
+</volist>
+
+</div>
+<div class="page-nav page-center"> 
+<div class="page-inner"> 
+<div class="page-content">
+{$commentdata['page']}
+</div> </div></div>
+
+
+<s id="yinyong"></s>
+<div style="clear:both;">
+<form id="comment_form" method="post" action="{:U('common/add_comment')}">
+
+<textarea name="info" id="info" class="write_content" ></textarea> 
+ <input type="hidden" name="itemid" value="{$id}" />
+ <input type="hidden" name="commentid" value="{$commentcount}" />
+  <input type="hidden" name="toid" id="toid" value="0" />
+ <input type="hidden" name="uid" value="{$uid}" />
+ <input type="hidden" name="typeid" value="1" />
+ <div class="comment-fb">
+ 
+ <input type="submit" class="wk-btn2 g-n-btns" value="发布" />
+ </div>
+  </form>
+  </div>
+</div>
+<div class="comment-right">
+
+<div class="docupload">
+<a href="{:U('doc/doc_share')}" class="viewbtn docupbtn"></a>
+
+</div>
+
+<div class="docinfotitle" style="border:0">文档信息</div>
+
+<div class="docinfo">
+<p><a href="{:U('member/mydoclist',array('uid'=>$info['uid']))}">{$info['uid']|getusername}</a>贡献于{$info.add_time|fdate}</p>
+
+
+  
+  <p>下载：<s>{$downnum}</s><em>|</em>收藏：<s>{$xhnum}</s><em>|</em>推荐：<s>{$tuijiannum}</s></p>
+  
+  
+  <p>({$commentcount}人评论)&nbsp;&nbsp;</p>
+  <p><a href="#comment_form" class="userEva-btn2 mycomment-btn">
+  <b class="userEva-btn2 iccomment"></b>我要评论</a></p>
+  
+</div>
+
+<div class="docinfotitle">同类别文档</div>
+
+<div class="docinfo">
+<ul>
+<mtceo:doc type="lists" cateid="$info['cateid']" exceptid="$info['id']" how="rate" order="add_time desc" >
+			<volist name="data['list']" id="vo" offset="0" length="6">
+<li><a href="{:U('doc/doccon',array('id'=>$vo['id']))}">{$vo.title|msubstr=###,0,14}</a></li>
+</volist>
+</mtceo:doc>
+</ul>
+
+
+
+</div>
+
+<div class="docinfotitle">相关文档</div>
+
+<div class="docinfo">
+<ul>
+<mtceo:doc type="lists" similar="$info['id']"  exceptid="$info['id']" how="rate" order="add_time desc" >
+			<volist name="data['list']" id="vo" offset="0" length="6">
+<li><a href="{:U('doc/doccon',array('id'=>$vo['id']))}">{$vo.title|msubstr=###,0,14}</a></li>
+</volist>
+</mtceo:doc>
+
+</ul>
+
+
+
+</div>
+
+<div class="conad1">
+
+</div></div>
+
+<div class="clear"></div>
+
+
+</div>
+
+ <script src="__PUBLIC__/js/kindeditor/kindeditor.js"></script>
+<script>
+$(function() {
+	KindEditor.create('#info', {
+		 themeType : 'simple',
+		
+		uploadJson : '{:U("attachment/editer_upload")}',
+		fileManagerJson : '{:U("attachment/editer_manager")}',
+		allowFileManager : true,
+		items:['emoticons'],
+		emotPath:'./public/images/emot/{$emot}/',
+		emotwidth: '{$emotwidth}',
+		emotnum:'{$emotnum}',
+	});
+
+	
+});
+</script>
+<script type="text/javascript">
+
+$(function(){
+
+	//$('#comment_form').submit();
+
+	
+   
+
+	
+	$('#comment_form').ajaxForm({success:complate,dataType:'json'});
+	
+	function complate(result){
+		
+		if(result.status == 1){
+			
+            $.mtceo.tip({content:result.msg});
+            setTimeout(function (){window.location.reload();},1000);
+		} else {
+			$.mtceo.tip({content:result.msg, icon:'alert'});
+		}
+	}
+	
+	
+
+    
+});
+</script>
+<include file="public:footer" />

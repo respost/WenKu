@@ -1,0 +1,197 @@
+<include file="public:header" />
+<!--SEO设置-->
+<div class="pad_lr_10">
+    <div class="col_tab">
+
+        <ul class="tip_list clearfix ml20">
+            <li>网站标题 <span class="highlight">{site_name}</span></li>
+            <li>站点设置里面的Title <span class="highlight">{site_title}</span></li>
+            <li>站点设置里面的Keywords <span class="highlight">{site_keywords}</span></li>
+            <li>站点设置里面的Description <span class="highlight">{site_description}</span></li>
+            
+        </ul>
+
+        <ul class="J_tabs tab_but cu_li mt10">
+            <li class="current">搜索页面</li>
+            <li>首页</li>
+            <li>文档列表页</li>
+            <li>文档内容页</li>
+            <li>标签列表页</li>
+            <li>个人中心页</li>
+            <li>用户查看页</li>
+        </ul>
+    
+        <form id="info_form" action="{:u('seo/page')}" method="post">
+        <div class="J_panes">
+            <div class="content_list pad_10">
+                <table width="100%" class="table_form">
+
+                    <tr>
+                        <th>Title</th>
+                        <td><textarea name="seo_config[search][title]" cols="80" rows="2">{$seo_config.search.title}</textarea></td>
+                    </tr>
+                    <tr>
+                        <th>Keywords</th>
+                        <td><textarea name="seo_config[search][keywords]" cols="80" rows="2">{$seo_config.search.keywords}</textarea></td>
+                    </tr>
+                    <tr>
+                        <th>Description</th>
+                        <td><textarea name="seo_config[search][description]" cols="80" rows="3">{$seo_config.search.description}</textarea></td>
+                    </tr>
+                </table>
+            </div>
+                       <div class="content_list pad_10" style="display:none;">
+               
+                <table width="100%" class="table_form">
+                    <thead>
+                    <tr>
+                        <th colspan="2" align="left">首页</th>
+                    </tr>
+                    </thead>
+      
+                    <tr>
+                        <th width="80">Title</th>
+                        <td><textarea name="seo_config[index][title]" cols="80" rows="2">{$seo_config.index.title}</textarea></td>
+                    </tr>
+                    <tr>
+                        <th>Keywords</th>
+                        <td><textarea name="seo_config[index][keywords]" cols="80" rows="2">{$seo_config.index.keywords}</textarea></td>
+                    </tr>
+                    <tr>
+                        <th>Description</th>
+                        <td><textarea name="seo_config[index][description]" cols="80" rows="3">{$seo_config.index.description}</textarea></td>
+                    </tr>
+                </table>
+            </div>
+             <div class="content_list pad_10" style="display:none;">
+                 <table width="100%" class="table_form">
+                    <thead>
+                    <tr>
+                        <th colspan="2" align="left">文档列表页</th>
+                    </tr>
+                    </thead>
+
+                    <tr>
+                        <th width="80">Title</th>
+                        <td><textarea name="seo_config[doclist][title]" cols="80" rows="2">{$seo_config.doclist.title}</textarea></td>
+                    </tr>
+                    <tr>
+                        <th>Keywords</th>
+                        <td><textarea name="seo_config[doclist][keywords]" cols="80" rows="2">{$seo_config.doclist.keywords}</textarea></td>
+                    </tr>
+                    <tr>
+                        <th>Description</th>
+                        <td><textarea name="seo_config[doclist][description]" cols="80" rows="3">{$seo_config.doclist.description}</textarea></td>
+                    </tr>
+                </table>
+               
+            </div>
+             <div class="content_list pad_10" style="display:none;">
+                
+                <table width="100%" class="table_form">
+                    <thead>
+                    <tr>
+                        <th colspan="2" align="left">文档内容页</th>
+                    </tr>
+                    </thead>
+      
+                    <tr>
+                        <th width="80">Title</th>
+                        <td><textarea name="seo_config[doccon][title]" cols="80" rows="2">{$seo_config.doccon.title}</textarea></td>
+                    </tr>
+                    <tr>
+                        <th>Keywords</th>
+                        <td><textarea name="seo_config[doccon][keywords]" cols="80" rows="2">{$seo_config.doccon.keywords}</textarea></td>
+                    </tr>
+                    <tr>
+                        <th>Description</th>
+                        <td><textarea name="seo_config[doccon][description]" cols="80" rows="3">{$seo_config.doccon.description}</textarea></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="content_list pad_10" style="display:none;">
+
+                <table width="100%" class="table_form">
+                    <thead>
+                    <tr>
+                        <th colspan="2" align="left">标签列表页</th>
+                    </tr>
+                    </thead>
+
+                    <tr>
+                        <th width="80">Title</th>
+                        <td><textarea name="seo_config[taglist][title]" cols="80" rows="2">{$seo_config.taglist.title}</textarea></td>
+                    </tr>
+                    <tr>
+                        <th>Keywords</th>
+                        <td><textarea name="seo_config[taglist][keywords]" cols="80" rows="2">{$seo_config.taglist.keywords}</textarea></td>
+                    </tr>
+                    <tr>
+                        <th>Description</th>
+                        <td><textarea name="seo_config[taglist][description]" cols="80" rows="3">{$seo_config.taglist.description}</textarea></td>
+                    </tr>
+                </table>
+            </div>
+             <div class="content_list pad_10" style="display:none;">
+
+                <table width="100%" class="table_form">
+                    <thead>
+                    <tr>
+                        <th colspan="2" align="left">个人中心页</th>
+                    </tr>
+                    </thead>
+
+                    <tr>
+                        <th width="80">Title</th>
+                        <td><textarea name="seo_config[ucenter][title]" cols="80" rows="2">{$seo_config.ucenter.title}</textarea></td>
+                    </tr>
+                    <tr>
+                        <th>Keywords</th>
+                        <td><textarea name="seo_config[ucenter][keywords]" cols="80" rows="2">{$seo_config.ucenter.keywords}</textarea></td>
+                    </tr>
+                    <tr>
+                        <th>Description</th>
+                        <td><textarea name="seo_config[ucenter][description]" cols="80" rows="3">{$seo_config.ucenter.description}</textarea></td>
+                    </tr>
+                </table>
+            </div>
+             <div class="content_list pad_10" style="display:none;">
+
+                <table width="100%" class="table_form">
+                    <thead>
+                    <tr>
+                        <th colspan="2" align="left">用户查看页</th>
+                    </tr>
+                    </thead>
+
+                    <tr>
+                        <th width="80">Title</th>
+                        <td><textarea name="seo_config[member][title]" cols="80" rows="2">{$seo_config.member.title}</textarea></td>
+                    </tr>
+                    <tr>
+                        <th>Keywords</th>
+                        <td><textarea name="seo_config[member][keywords]" cols="80" rows="2">{$seo_config.member.keywords}</textarea></td>
+                    </tr>
+                    <tr>
+                        <th>Description</th>
+                        <td><textarea name="seo_config[member][description]" cols="80" rows="3">{$seo_config.member.description}</textarea></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <div class="mt10">
+            <input type="hidden" name="menuid"  value="{$menuid}"/>
+            <input type="submit" class="btn btn_submit" name="do" value="{:L('submit')}"/>
+        </div>
+        </form>
+    </div>
+</div>
+<include file="public:footer" />
+<script>
+$(function(){
+    $('ul.J_tabs').tabs('div.J_panes > div');
+});
+</script>
+</body>
+</html>

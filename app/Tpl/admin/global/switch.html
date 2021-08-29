@@ -1,0 +1,36 @@
+<include file="public:header" />
+<!--网站设置-->
+<div class="pad_lr_10">
+	<form id="info_form" action="{:u('global/edit')}" method="post">
+	<table width="100%" class="table_form">
+        <tr>
+        	<th width="150">文档是否需要审核 :</th>
+        	<td>
+            	<label><input type="radio"  <if condition="C('mtceo_web_switch.doc_con') eq '1'">checked="checked"</if> value="1" name="setting[web_switch][doc_con]"> 是</label> &nbsp;&nbsp;
+                <label><input type="radio"  <if condition="C('mtceo_web_switch.doc_con') eq '2'">checked="checked"</if> value="2" name="setting[web_switch][doc_con]"> 否</label>
+            </td>
+    	</tr>
+       <tr>
+        	<th width="150">是否开启评论 :</th>
+        	<td>
+            	<label><input type="radio"  <if condition="C('mtceo_web_switch.comment') eq '1'">checked="checked"</if> value="1" name="setting[web_switch][comment]"> 是</label> &nbsp;&nbsp;
+                <label><input type="radio"  <if condition="C('mtceo_web_switch.comment') eq '0'">checked="checked"</if> value="0" name="setting[web_switch][comment]"> 否</label>
+            </td>
+    	</tr>
+    	 <tr>
+        	<th width="150">是否开启黑名单 :</th>
+        	<td>
+            	<label><input type="radio"  <if condition="C('mtceo_web_switch.ipban') eq '1'">checked="checked"</if> value="1" name="setting[web_switch][ipban]"> 是</label> &nbsp;&nbsp;
+                <label><input type="radio"  <if condition="C('mtceo_web_switch.ipban') eq '0'">checked="checked"</if> value="0" name="setting[web_switch][ipban]"> 否</label>
+            </td>
+    	</tr>
+        <tr>
+        	<th></th>
+        	<td><input type="hidden" name="menuid"  value="{$menuid}"/><input type="submit" class="btn btn_submit" value="{:L('submit')}"/></td>
+    	</tr>
+	</table>
+	</form>
+</div>
+<include file="public:footer" />
+</body>
+</html>

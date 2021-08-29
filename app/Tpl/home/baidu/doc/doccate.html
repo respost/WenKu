@@ -1,0 +1,31 @@
+<include file="public:head" />
+<div class="clear menu"><a href="{:U('index/index')}">文库首页</a><em class="bgcur"></em>分类列表</div>
+
+<div class="cleft">
+	<div class="allcate">
+		<volist name="tcate" id="vo">
+			<div class="catelist" style="margin-bottom:10px;">
+				<h3 style="margin:5px 13px;"><a href="{:U('doc/doclist',array('id'=>$vo['id']))}">{$vo.name}</a></h3>
+				<ul>
+					<volist name="vo['scate']" id="vo1">
+					<li><a href="{:U('doc/doclist',array('id'=>$vo1['id']))}">{$vo1.name}</a></li>
+					</volist>
+				</ul>
+			</div>
+		</volist>
+	</div>
+</div>
+<div class="cright" style="margin-bottom:10px;">
+	<div class="catelist2">
+		<div class="catetitle">文档分类</div>
+		<ul>
+			<volist name="cate" id="vo">
+			<li <if condition="$id eq $vo['id']">class="cur"</if>>
+				<P class="boldp"><a href="{:U('doc/doccate',array('id'=>$vo['id']))}">{$vo.name}</a></P>
+			</li>
+			</volist>
+		</ul>
+	</div>
+</div>
+<div class="clear"></div>
+<include file="public:footer" />
